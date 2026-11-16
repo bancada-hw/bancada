@@ -74,6 +74,13 @@ public static class Adaptadores
 
         // Si hay tarjetas reales, se ocultan las virtuales (Hyper-V, VPN, máquinas virtuales…).
         if (lista.Any(a => a.Fisico)) lista = lista.Where(a => a.Fisico).ToList();
+        if (Opciones.Anonimo)
+            lista = lista.Select((a, n) => a with
+            {
+                Mac = a.Mac.Length > 0 ? $"02:00:00:00:00:{n + 1:X2}" : "",
+                Ipv4 = a.Ipv4.Length > 0 && a.Conectado ? $"192.168.1.{20 + n}" : "",
+                PuertaEnlace = a.PuertaEnlace.Length > 0 && a.Conectado ? "192.168.1.1" : ""
+            }).ToList();
         return lista.OrderByDescending(a => a.Conectado).ThenBy(a => a.Tipo).ToList();
     }
 

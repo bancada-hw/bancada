@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bancada · Diagnostic matériel pour techniciens</title>
+<meta name="description" content="Bancada vérifie portables et ordinateurs de bureau pièce par pièce sous Windows et Linux : clavier, écran, batterie, disques, mémoire, processeur, carte graphique et plus. Natif, libre et gratuit.">
+<meta name="theme-color" content="#0B241C">
+<meta property="og:title" content="Bancada · Diagnostic matériel pour techniciens">
+<meta property="og:description" content="Bancada vérifie portables et ordinateurs de bureau pièce par pièce sous Windows et Linux : clavier, écran, batterie, disques, mémoire, processeur, carte graphique et plus. Natif, libre et gratuit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bancada-hw.github.io/bancada/fr/">
+<meta property="og:image" content="https://bancada-hw.github.io/bancada/capturas/fr/inicio.png">
+<link rel="canonical" href="https://bancada-hw.github.io/bancada/fr/">
+<link rel="alternate" hreflang="es" href="https://bancada-hw.github.io/bancada/es/">
+<link rel="alternate" hreflang="en" href="https://bancada-hw.github.io/bancada/en/">
+<link rel="alternate" hreflang="pt" href="https://bancada-hw.github.io/bancada/pt/">
+<link rel="alternate" hreflang="fr" href="https://bancada-hw.github.io/bancada/fr/">
+<link rel="alternate" hreflang="de" href="https://bancada-hw.github.io/bancada/de/">
+<link rel="alternate" hreflang="it" href="https://bancada-hw.github.io/bancada/it/">
+<link rel="alternate" hreflang="x-default" href="https://bancada-hw.github.io/bancada/">
+<link rel="icon" href="../assets/bancada.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/web.css">
+</head>
+<body>
+<svg class="sprite" aria-hidden="true">
+  <symbol id="ico-win" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5.5 10.5 4.4v7.1H3zm8.5-1.2L21 3v8.5h-9.5zM3 12.5h7.5v7.1L3 18.5zm8.5 0H21V21l-9.5-1.3z"/></symbol>
+  <symbol id="ico-linux" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c-2.2 0-3.6 1.9-3.6 4.6 0 1.6.4 2.6-.5 4.1C6.6 12.8 5 15 5.6 17.3c-1 .4-1.9 1.1-1.5 2 .5 1 2.4.6 3.6 1.4 1.3.9 3 1.1 4.3.3 1.3.8 3 .6 4.3-.3 1.2-.8 3.1-.4 3.6-1.4.4-.9-.5-1.6-1.5-2 .6-2.3-1-4.5-2.3-6.6-.9-1.5-.5-2.5-.5-4.1C15.6 3.9 14.2 2 12 2zm-1.6 4.2c.5 0 .8.6.8 1.3 0 .4-.1.7-.3 1l-.9-.3c.1-.2.1-.4.1-.7 0-.4-.2-.7-.4-.7s-.4.3-.4.7v.2l-.7-.3c0-.7.4-1.2 1.8-1.2zm3.2 0c.8 0 1.2.6 1.2 1.3l-.8.3v-.2c0-.4-.2-.7-.4-.7s-.4.3-.4.7c0 .2 0 .4.1.6l-.8.3c-.2-.3-.3-.6-.3-1 0-.7.5-1.3 1.4-1.3z"/></symbol>
+  <symbol id="ico-gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></symbol>
+</svg>
+
+<header class="cabecera">
+  <div class="ancho cabecera-in">
+    <a class="marca" href="./"><img src="../assets/bancada.svg" alt="" width="34" height="34"><span>Bancada</span></a>
+    <nav class="menu" aria-label="Bancada">
+      <a href="#pruebas">Tests</a>
+      <a href="#capturas">Captures</a>
+      <a href="#como">Fonctionnement</a>
+      <a href="#ficha">Fiche technique</a>
+      <a href="#apoyar">Soutenir</a>
+      <a href="https://github.com/bancada-hw/bancada/blob/main/docs/guia/fr.md">Guide</a>
+    </nav>
+    <div class="cabecera-der">
+      <label class="idioma"><span class="sr">Idioma</span>
+        <select id="idioma" aria-label="Idioma / Language"><option value="es">Español</option><option value="en">English</option><option value="pt">Português</option><option value="fr" selected>Français</option><option value="de">Deutsch</option><option value="it">Italiano</option></select>
+      </label>
+      <a class="icono-gh" href="https://github.com/bancada-hw/bancada" aria-label="GitHub"><svg width="22" height="22"><use href="#ico-gh"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <svg class="pistas" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g class="pista-fondo">
+      <path d="M-20 120 H260 L320 60 H700"/><path d="M-20 470 H180 L240 530 H620 L680 470 H1220"/>
+      <path d="M1220 90 H980 L920 150 H760"/><path d="M1220 300 H1040 L1000 340 H860"/>
+      <path d="M90 600 V520 L140 470"/><path d="M1100 0 V60 L1060 100"/>
+    </g>
+    <g class="pista-pulso">
+      <path d="M-20 120 H260 L320 60 H700"/><path d="M-20 470 H180 L240 530 H620 L680 470 H1220"/>
+      <path d="M1220 90 H980 L920 150 H760"/>
+    </g>
+    <g class="vias"><circle cx="700" cy="60" r="7"/><circle cx="760" cy="150" r="7"/><circle cx="860" cy="340" r="7"/><circle cx="140" cy="470" r="7"/><circle cx="1060" cy="100" r="7"/></g>
+  </svg>
+  <div class="ancho hero-in">
+    <div class="hero-texto">
+      <p class="serigrafia">Diagnostic matériel · libre et gratuit <span class="ref">REV 0.2</span></p>
+      <h1>Le banc d'essai pour <em>chaque machine</em> qui passe par votre atelier.</h1>
+      <p class="entradilla">Lancez Bancada sur le portable ou le PC que vous contrôlez, voyez ce qu'il contient et testez chaque pièce, du clavier à la carte graphique. À la fin, un rapport PDF prêt pour le client.</p>
+      <div class="botones">
+        <a class="boton cobre" data-so="windows" href="https://github.com/bancada-hw/bancada/releases/latest/download/Bancada-windows-x64.exe"><svg width="18" height="18"><use href="#ico-win"/></svg>Télécharger pour Windows</a>
+        <a class="boton mascara" data-so="linux" href="https://github.com/bancada-hw/bancada/releases/latest/download/Bancada-linux-x64"><svg width="18" height="18"><use href="#ico-linux"/></svg>Télécharger pour Linux</a>
+        <a class="boton linea" href="https://github.com/bancada-hw/bancada"><svg width="18" height="18"><use href="#ico-gh"/></svg>Code sur GitHub</a>
+      </div>
+      <p class="nota">Un seul fichier d'environ 60 Mo · sans installation · Windows 10/11 et Linux x64<br><code>Sous Linux : chmod +x Bancada-linux-x64</code></p>
+    </div>
+    <figure class="monitor">
+      <div class="monitor-barra"><i></i><i></i><i></i><span>bancada</span></div>
+      <img src="../capturas/fr/inicio.png" alt="Résumé" width="1200" height="780" fetchpriority="high">
+    </figure>
+  </div>
+  <div class="ancho datos">
+    <div><b>16</b><span>tests</span></div>
+    <div><b>6</b><span>langues</span></div>
+    <div><b>1</b><span>fichier, sans installation</span></div>
+    <div><b>0</b><span>données envoyées</span></div>
+  </div>
+</section>
+
+<section id="pruebas" class="seccion">
+  <div class="ancho">
+    <p class="serigrafia">J1 · Tests</p>
+    <h2>Tout ce qui peut lâcher, vérifié</h2>
+    <p class="entradilla">Chaque test se termine par un verdict : fonctionne, avec défauts ou ne fonctionne pas. Les tests automatiques en proposent un, vous décidez.</p>
+    <ul class="rejilla">
+      <li class="pieza"><span class="ref">U01</span><h3>Résumé</h3><p>Marque, modèle et numéro de série, processeur, RAM par emplacement, cartes graphiques, disques, batterie, carte mère et BIOS.</p></li>
+      <li class="pieza destacada"><span class="ref">U02</span><h3>Contrôle complet</h3><p>Vous guide dans les tests manuels pendant qu'il fait seul les tests automatiques. Environ 20 minutes.</p></li>
+      <li class="pieza"><span class="ref">U03</span><h3>Clavier</h3><p>Clavier dessiné avec sa vraie forme (ISO, ANSI, ABNT2). Chaque touche reçue s'allume.</p></li>
+      <li class="pieza"><span class="ref">U04</span><h3>Pavé tactile et souris</h3><p>Zone qui se colore au passage, boutons, gestes, molette, écran tactile et stylet.</p></li>
+      <li class="pieza"><span class="ref">U05</span><h3>Écran</h3><p>Couleurs, dégradés et grille en plein écran pour les pixels morts et les fuites de lumière.</p></li>
+      <li class="pieza"><span class="ref">U06</span><h3>Son</h3><p>Haut-parleur gauche et droit, balayage des graves aux aigus et micro avec enregistrer et écouter.</p></li>
+      <li class="pieza"><span class="ref">U07</span><h3>Caméra</h3><p>Image en direct de chaque caméra. Prévient si elle reste noire. Rien n'est enregistré.</p></li>
+      <li class="pieza"><span class="ref">U08</span><h3>Réseau</h3><p>Cartes réseau, Wi-Fi, Bluetooth, connexion étape par étape et débit Internet.</p></li>
+      <li class="pieza"><span class="ref">U09</span><h3>Ports USB</h3><p>Marque chaque port qui répond avec sa vitesse réelle. Repère l'USB 3 qui tourne en USB 2.</p></li>
+      <li class="pieza"><span class="ref">U10</span><h3>Batterie et chargeur</h3><p>Santé et cycles, consommation en direct, autonomie réelle par usage et test du chargeur.</p></li>
+      <li class="pieza"><span class="ref">U11</span><h3>Disques</h3><p>Santé SMART, erreurs enregistrées par le système et vitesse réelle de lecture et d'écriture.</p></li>
+      <li class="pieza"><span class="ref">U12</span><h3>Mémoire RAM</h3><p>8 motifs sur toute la mémoire libre, bit par bit.</p></li>
+      <li class="pieza"><span class="ref">U13</span><h3>Processeur</h3><p>Test de charge qui détecte la surchauffe, la limitation thermique et les erreurs de calcul.</p></li>
+      <li class="pieza"><span class="ref">U14</span><h3>Carte graphique</h3><p>Charge sur n'importe quelle carte graphique avec calcul vérifié et test de la mémoire vidéo.</p></li>
+      <li class="pieza"><span class="ref">U15</span><h3>Veille</h3><p>Met en veille, réveille et vérifie que le réseau et les périphériques reviennent.</p></li>
+      <li class="pieza"><span class="ref">U16</span><h3>Carte mère</h3><p>Firmware, TPM, périphériques en erreur, liens PCIe, erreurs matérielles et pile CMOS.</p></li>
+      <li class="pieza informe"><span class="ref">J2</span><h3>Rapport PDF</h3><p>Tous les tests avec mesures, remarques et verdicts, sur un A4 à remettre.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="capturas" class="seccion oscura">
+  <div class="ancho">
+    <p class="serigrafia">J3 · Captures</p>
+    <h2>En images</h2>
+    <p class="entradilla">Une interface native à l'image d'une carte mère : vernis vert, pistes de cuivre et sérigraphie.</p>
+    <div class="pestanas" role="tablist">
+      <button role="tab" aria-selected="true" data-vista="inicio">Résumé</button>
+      <button role="tab" aria-selected="false" data-vista="revision">Contrôle</button>
+      <button role="tab" aria-selected="false" data-vista="teclado">Clavier</button>
+      <button role="tab" aria-selected="false" data-vista="red">Réseau</button>
+      <button role="tab" aria-selected="false" data-vista="discos">Disques</button>
+      <button role="tab" aria-selected="false" data-vista="procesador">Processeur</button>
+      <button role="tab" aria-selected="false" data-vista="grafica">Graphique</button>
+      <button role="tab" aria-selected="false" data-vista="placa">Carte mère</button>
+      <button role="tab" aria-selected="false" data-vista="informe">Rapport</button>
+    </div>
+    <figure class="monitor grande">
+      <div class="monitor-barra"><i></i><i></i><i></i><span id="titulo-captura">Résumé</span></div>
+      <img id="captura" src="../capturas/fr/inicio.png" alt="Résumé" width="1200" height="780" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section id="como" class="seccion">
+  <div class="ancho">
+    <p class="serigrafia">J4 · Fonctionnement</p>
+    <h2>Trois étapes, vingt minutes</h2>
+    <ol class="pasos">
+      <li><span class="num">01</span><h3>Lancez-le</h3><p>Depuis une clé USB ou un téléchargement. Pas d'installation, pas de compte, aucune trace.</p></li>
+      <li><span class="num">02</span><h3>Suivez le contrôle guidé</h3><p>Vous appuyez sur des touches, regardez et écoutez. Pendant ce temps, Bancada teste disques, réseau, mémoire, processeur et carte graphique en arrière-plan.</p></li>
+      <li><span class="num">03</span><h3>Remettez le rapport</h3><p>Un PDF avec chaque mesure et chaque verdict, vos notes et le numéro de série de la machine.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="ficha" class="seccion oscura">
+  <div class="ancho dos-col">
+    <div>
+      <p class="serigrafia">J5 · Fiche technique</p>
+      <h2>Fiche technique</h2>
+      <p class="entradilla">Fait par des techniciens, pour des techniciens. Pas de couche web, rien à installer.</p>
+      <div class="privacidad">
+        <h3>Vos machines et celles de vos clients restent sur l'établi</h3>
+        <p>Bancada ne collecte ni n'envoie aucune donnée. La caméra et le micro ne sont jamais enregistrés, et le rapport reste dans votre dossier Documents. Il ne va sur Internet que pour :</p>
+        <ul><li>Vérifier la connexion (routeur, DNS et un site sécurisé).</li><li>Mesurer le débit, seulement si vous appuyez sur le bouton (Cloudflare).</li><li>Comparer l'horloge de la carte mère avec l'heure d'Internet.</li><li>Ouvrir des pages web dans le mode navigation du test de batterie.</li></ul>
+      </div>
+    </div>
+    <dl class="hoja">
+      <div><dt>Plateformes</dt><dd>Windows 10/11 x64 · Linux x64</dd></div>
+      <div><dt>Format</dt><dd>Un exécutable autonome d'environ 60 Mo</dd></div>
+      <div><dt>Interface</dt><dd>Native avec Avalonia 12 sur .NET 10 (sans Electron)</dd></div>
+      <div><dt>Droits</dt><dd>Utilisateur standard ; en administrateur ou avec sudo, aussi barrettes RAM, numéro de série et SMART SATA</dd></div>
+      <div><dt>Langues</dt><dd>Español, English, Português, Français, Deutsch, Italiano</dd></div>
+      <div><dt>Rapport</dt><dd>PDF A4 dans la langue choisie</dd></div>
+      <div><dt>Licence</dt><dd>GPL-3.0 ou ultérieure, code ouvert</dd></div>
+      <div><dt>Télémétrie</dt><dd>Aucune. Sans compte, sans publicité</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="apoyar" class="seccion apoyar">
+  <div class="ancho apoyar-in">
+    <img src="../assets/bancada.svg" alt="" width="88" height="88">
+    <div>
+      <p class="serigrafia">J6 · Soutenir</p>
+      <h2>Gratuit aujourd'hui et pour toujours</h2>
+      <p class="entradilla">Bancada n'a pas de version payante. S'il vous fait gagner du temps à l'atelier, vous pouvez l'aider à grandir.</p>
+      <div class="botones">
+        <a class="boton linea" href="https://github.com/bancada-hw/bancada/stargazers">★ Mettre une étoile</a>
+        <a class="boton linea" href="https://github.com/bancada-hw/bancada/issues">Signaler un bug</a>
+        <a class="boton linea" href="https://github.com/bancada-hw/bancada/blob/main/docs/desarrollo/fr.md#traduire-bancada">Le traduire</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="ancho pie-in">
+    <div class="marca"><img src="../assets/bancada.svg" alt="" width="28" height="28"><span>Bancada</span></div>
+    <p>Diagnostic matériel libre et gratuit. © 2026 Bill Bull · <a href="https://github.com/bancada-hw/bancada/blob/main/LICENSE">Licence GPL-3.0</a> · <a href="https://github.com/bancada-hw/bancada/blob/main/AVISO.md">Conditions supplémentaires</a><br>Ce site n'utilise ni cookies ni traceurs.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var sel = document.getElementById('idioma');
+  sel.addEventListener('change', function () { location.href = '../' + sel.value + '/' + location.hash; });
+  var plat = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
+  if (/linux/i.test(plat) && !/android/i.test(navigator.userAgent)) {
+    var w = document.querySelector('[data-so=windows]'), l = document.querySelector('[data-so=linux]');
+    w.className = 'boton mascara'; l.className = 'boton cobre'; l.parentNode.insertBefore(l, w);
+  }
+  var img = document.getElementById('captura'), tit = document.getElementById('titulo-captura');
+  document.querySelectorAll('.pestanas button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.pestanas button').forEach(function (o) { o.setAttribute('aria-selected', o === b); });
+      img.src = '../capturas/fr/' + b.dataset.vista + '.png'; img.alt = b.textContent; tit.textContent = b.textContent;
+    });
+  });
+})();
+</script>
+</body>
+</html>

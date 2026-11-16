@@ -4,7 +4,14 @@ namespace Bancada.Sistema;
 
 public static class DetectorEquipo
 {
-    public static Task<InfoEquipo> DetectarAsync() => Task.Run(() =>
+    public static async Task<InfoEquipo> DetectarAsync()
+    {
+        var i = await Detectar();
+        if (Opciones.Anonimo && i.NumeroSerie.Length > 0) i.NumeroSerie = "BNC0123456";
+        return i;
+    }
+
+    static Task<InfoEquipo> Detectar() => Task.Run(() =>
     {
         try
         {

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bancada</title>
+<link rel="canonical" href="https://bancada-hw.github.io/bancada/en/">
+<link rel="alternate" hreflang="es" href="https://bancada-hw.github.io/bancada/es/">
+<link rel="alternate" hreflang="en" href="https://bancada-hw.github.io/bancada/en/">
+<link rel="alternate" hreflang="pt" href="https://bancada-hw.github.io/bancada/pt/">
+<link rel="alternate" hreflang="fr" href="https://bancada-hw.github.io/bancada/fr/">
+<link rel="alternate" hreflang="de" href="https://bancada-hw.github.io/bancada/de/">
+<link rel="alternate" hreflang="it" href="https://bancada-hw.github.io/bancada/it/">
+<link rel="alternate" hreflang="x-default" href="https://bancada-hw.github.io/bancada/">
+<link rel="icon" href="assets/bancada.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0B241C">
+<script>
+(function () {
+  var hay = ["es", "en", "pt", "fr", "de", "it"], pref = navigator.languages || [navigator.language || 'en'];
+  for (var i = 0; i < pref.length; i++) {
+    var l = (pref[i] || '').slice(0, 2).toLowerCase();
+    if (hay.indexOf(l) >= 0) { location.replace(l + '/' + location.hash); return; }
+  }
+  location.replace('en/' + location.hash);
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=en/"></noscript>
+<style>body{background:#0B241C;color:#EEEBE2;font-family:system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0}a{color:#F0B27A}</style>
+</head>
+<body><p><a href="es/">Español</a> · <a href="en/">English</a> · <a href="pt/">Português</a> · <a href="fr/">Français</a> · <a href="de/">Deutsch</a> · <a href="it/">Italiano</a></p></body>
+</html>

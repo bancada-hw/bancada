@@ -47,12 +47,15 @@ internal static class Opciones
     public static int? Cada { get; private set; }
     /// <summary>--suspender: abre la prueba de suspensión y la lanza sola (con --captura, captura al terminar). Suspende el equipo de verdad.</summary>
     public static bool Suspender { get; private set; }
+    /// <summary>--anonimo: oculta número de serie, MAC, IP y nombres de redes Wi-Fi (capturas para la documentación).</summary>
+    public static bool Anonimo { get; private set; }
 
     public static void Leer(string[] args)
     {
         Completa = args.Contains("--completa");
         Revision = args.Contains("--revision");
         Suspender = args.Contains("--suspender");
+        Anonimo = args.Contains("--anonimo");
         for (int i = 0; i < args.Length - 1; i++)
         {
             switch (args[i])

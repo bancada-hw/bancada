@@ -13,11 +13,28 @@ public sealed record EstadoWifi(bool HayAdaptador, string? Error, ConexionWifi? 
 
 public static class Wifi
 {
-    public static Task<EstadoWifi> EstadoAsync(bool escanear)
+    public static async Task<EstadoWifi> EstadoAsync(bool escanear)
     {
-        if (OperatingSystem.IsWindows()) return WifiWindows.EstadoAsync(escanear);
-        if (OperatingSystem.IsLinux()) return WifiLinux.EstadoAsync(escanear);
-        return Task.FromResult(new EstadoWifi(false, Tx("Sistema no compatible"), null, new()));
+        var e = OperatingSystem.IsWindows() ? await WifiWindows.EstadoAsync(escanear)
+              : OperatingSystem.IsLinux() ? await WifiLinux.EstadoAsync(escanear)
+              : new EstadoWifi(false, Tx("Sistema no compatible"), null, new());
+        return Opciones.Anonimo ? Anonimizar(e) : e;
+    }
+
+    /// <summary>--anonimo: cambia los nombres de las redes por otros inventados (capturas para la documentación).</summary>
+    static EstadoWifi Anonimizar(EstadoWifi e)
+    {
+        var nombres = new Dictionary<string, string>();
+        string Nombre(string ssid) => ssid.Length == 0 ? ssid
+            : nombres.TryGetValue(ssid, out var n) ? n
+            : nombres[ssid] = nombres.Count == 0 ? "LAB-5G" : $"WIFI-{nombres.Count:00}";
+        if (e.Actual != null) Nombre(e.Actual.Ssid);
+        foreach (var r in e.Redes.Where(r => r.Conectada)) Nombre(r.Ssid);
+        return e with
+        {
+            Actual = e.Actual == null ? null : e.Actual with { Ssid = Nombre(e.Actual.Ssid) },
+            Redes = e.Redes.Select(r => r with { Ssid = Nombre(r.Ssid) }).ToList()
+        };
     }
 
     public static int Canal(int mhz) =>
