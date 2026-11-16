@@ -99,7 +99,7 @@ en la barra lateral. El informe sale en el idioma elegido. ¿Quieres añadir el 
 ## Apoyar el proyecto
 
 Bancada es gratis y lo seguirá siendo. Si te ahorra tiempo en el taller, puedes ayudar a mantenerlo con
-un donativo, contando qué falla en
+un [donativo](https://github.com/sponsors/bancada-hw), contando qué falla en
 [Issues](https://github.com/bancada-hw/bancada/issues) o traduciéndolo a tu idioma.
 
 ## Licencia

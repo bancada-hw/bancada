@@ -99,7 +99,7 @@ be changed in the sidebar. The report comes out in the chosen language. Want to 
 ## Support the project
 
 Bancada is free and will stay free. If it saves you time at the bench, you can help keep it going with a
-donation, by reporting what fails in
+[donation](https://github.com/sponsors/bancada-hw), by reporting what fails in
 [Issues](https://github.com/bancada-hw/bancada/issues) or by translating it into your language.
 
 ## License

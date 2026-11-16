@@ -1,36 +1,26 @@
-# Activar los donativos
+# Donativos
 
-Todo está preparado para que activarlos sea cambiar dos archivos. Mientras no lo hagas, ni la web ni
-GitHub muestran ningún botón de donar.
+Bancada recibe donativos con GitHub Sponsors: <https://github.com/sponsors/bancada-hw>. El botón
+**Sponsor** del repositorio sale de `.github/FUNDING.yml` y el botón de la web, del enlace `donar` de
+`docs/web/config.json` (con `""` desaparece). Después de cambiar `config.json`, ejecuta
+`python3 herramientas/generar-web.py`.
 
-## Opción recomendada: GitHub Sponsors
+## Cómo se dio de alta (por si hay que repetirlo)
 
-Sin comisiones para donativos de personas, el dinero llega por Stripe a tu cuenta bancaria y España está
-admitida. El botón **Sponsor** aparece arriba en el repositorio.
+1. Verificación en dos pasos activada en la cuenta de GitHub (obligatoria).
+2. *Settings → Sponsors* de la organización bancada-hw → **Get started**.
+3. En Stripe: país España y tipo de empresa **Vendedor**, que es como Stripe llama a la persona física.
+   «Empresa» es para sociedades con CIF y «Sin fines de lucro» para asociaciones registradas.
+4. Datos personales tal como figuran en el DNI, teléfono móvil (verificación por SMS) e IBAN. Stripe los
+   guarda para verificar la identidad; no se publican.
+5. Formulario fiscal W-8BEN en GitHub: NIF en «Foreign tax identifying number» y España como país.
+6. Perfil público con descripción y niveles de donativo.
 
-1. Entra en <https://github.com/sponsors/bancada-hw> (o en *Settings → Sponsors* de la organización
-   bancada-hw) y pulsa **Join the waitlist / Get started**.
-2. Rellena el perfil: descripción del proyecto, niveles (por ejemplo 2 €, 5 € y 15 € al mes, y donativo
-   único libre) y la cuenta de Stripe Connect con tu IBAN y tus datos fiscales.
-3. GitHub revisa la solicitud (suele tardar unos días).
-4. Cuando esté aprobada:
-   - En `.github/FUNDING.yml`, quita el `#` de la línea `github: bancada-hw`.
-   - En `docs/web/config.json`, pon `{ "donar": "https://github.com/sponsors/bancada-hw" }`.
-   - Ejecuta `python3 herramientas/generar-web.py`, haz commit y sube los cambios.
+## Otras plataformas
 
-## Alternativas o complementos
-
-- **Ko-fi** (<https://ko-fi.com>): donativos sueltos con PayPal o tarjeta, sin comisión en el plan
-  gratuito. Crea la página `bancada`, quita el `#` de `ko_fi: bancada` y, si quieres que sea el botón de la
-  web, usa `https://ko-fi.com/bancada` en `config.json`.
-- **Liberapay** (<https://liberapay.com>): donativos periódicos, sin ánimo de lucro, pensado para
-  software libre. Igual: `liberapay: bancada`.
-
-Puedes tener varias a la vez en `FUNDING.yml`; GitHub las muestra todas en el botón **Sponsor**. La web
-enseña un solo botón, el del enlace de `config.json`.
+Se pueden añadir a la vez en `FUNDING.yml` (GitHub las enseña todas en el botón **Sponsor**):
+`ko_fi: bancada` (Ko-fi, donativos sueltos con PayPal) o `liberapay: bancada` (Liberapay, periódicos).
 
 ## Hacienda
 
-Los donativos son ingresos: en España cuentan como rendimientos de actividad económica o, si son
-ocasionales y sin contraprestación, pueden tributar como donación. Consulta con una gestoría cuando
-empiecen a llegar cantidades regulares.
+Cuando lleguen donativos regulares, conviene consultarlo con una gestoría.

@@ -100,7 +100,7 @@ Voir [comment traduire](docs/desarrollo/fr.md#traduire-bancada) : pas besoin de 
 ## Soutenir le projet
 
 Bancada est gratuit et le restera. S'il vous fait gagner du temps à l'atelier, vous pouvez aider à le
-maintenir par un don, en signalant ce qui ne marche pas dans
+maintenir par un [don](https://github.com/sponsors/bancada-hw), en signalant ce qui ne marche pas dans
 [Issues](https://github.com/bancada-hw/bancada/issues) ou en le traduisant dans votre langue.
 
 ## Licence

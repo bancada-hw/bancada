@@ -101,7 +101,7 @@ ist nicht nötig.
 ## Das Projekt unterstützen
 
 Bancada ist kostenlos und bleibt es. Wenn es Ihnen in der Werkstatt Zeit spart, können Sie es mit einer
-Spende unterstützen, Fehler unter
+[Spende](https://github.com/sponsors/bancada-hw) unterstützen, Fehler unter
 [Issues](https://github.com/bancada-hw/bancada/issues) melden oder es in Ihre Sprache übersetzen.
 
 ## Lizenz

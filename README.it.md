@@ -99,7 +99,7 @@ cambia nella barra laterale. Il rapporto esce nella lingua scelta. Vuoi aggiunge
 ## Sostieni il progetto
 
 Bancada è gratuito e lo resterà. Se ti fa risparmiare tempo al banco, puoi aiutare a mantenerlo con una
-donazione, segnalando cosa non va in
+[donazione](https://github.com/sponsors/bancada-hw), segnalando cosa non va in
 [Issues](https://github.com/bancada-hw/bancada/issues) o traducendolo nella tua lingua.
 
 ## Licenza
