@@ -1,0 +1,14 @@
+bin/
+obj/
+artifacts/
+dist/
+.dotnet/
+.dotnet-install.sh
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+capturas-revision/
+*.pdf
+*.log

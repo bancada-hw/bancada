@@ -1,0 +1,52 @@
+<!--
+  Identidad visual: una placa base. Barra lateral en verde de máscara de soldadura,
+  pistas y acentos en cobre, textos en blanco serigrafía. El contenido va sobre papel
+  cálido (claro) o grafito verdoso (oscuro).
+-->
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Light">
+      <SolidColorBrush x:Key="FondoApp" Color="#F4F2ED" />
+      <SolidColorBrush x:Key="FondoTarjeta" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="FondoHundido" Color="#ECE9E2" />
+      <SolidColorBrush x:Key="Borde" Color="#E2DED5" />
+      <SolidColorBrush x:Key="Tinta" Color="#1A1D1B" />
+      <SolidColorBrush x:Key="TintaSuave" Color="#5F6761" />
+      <SolidColorBrush x:Key="Cobre" Color="#B5642A" />
+      <SolidColorBrush x:Key="CobreSuave" Color="#F5E6D8" />
+      <SolidColorBrush x:Key="TeclaFondo" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="TeclaBorde" Color="#D3CEC3" />
+    </ResourceDictionary>
+    <ResourceDictionary x:Key="Dark">
+      <SolidColorBrush x:Key="FondoApp" Color="#111513" />
+      <SolidColorBrush x:Key="FondoTarjeta" Color="#191F1C" />
+      <SolidColorBrush x:Key="FondoHundido" Color="#222A26" />
+      <SolidColorBrush x:Key="Borde" Color="#2A332E" />
+      <SolidColorBrush x:Key="Tinta" Color="#ECEAE4" />
+      <SolidColorBrush x:Key="TintaSuave" Color="#A3ACA6" />
+      <SolidColorBrush x:Key="Cobre" Color="#E09A5C" />
+      <SolidColorBrush x:Key="CobreSuave" Color="#3A2A1E" />
+      <SolidColorBrush x:Key="TeclaFondo" Color="#1F2622" />
+      <SolidColorBrush x:Key="TeclaBorde" Color="#343E38" />
+    </ResourceDictionary>
+  </ResourceDictionary.ThemeDictionaries>
+
+  <!-- Barra lateral (igual en claro y oscuro) -->
+  <SolidColorBrush x:Key="Mascara" Color="#0F3D2E" />
+  <SolidColorBrush x:Key="MascaraClara" Color="#185340" />
+  <SolidColorBrush x:Key="Serigrafia" Color="#EEEBE2" />
+  <SolidColorBrush x:Key="SerigrafiaSuave" Color="#9FBAAE" />
+  <SolidColorBrush x:Key="CobreBrillo" Color="#D99055" />
+
+  <!-- Estados de las pruebas -->
+  <SolidColorBrush x:Key="EstadoOk" Color="#2E9D57" />
+  <SolidColorBrush x:Key="EstadoAviso" Color="#D99A00" />
+  <SolidColorBrush x:Key="EstadoFallo" Color="#D2453B" />
+  <SolidColorBrush x:Key="EstadoPendiente" Color="#9AA39D" />
+  <SolidColorBrush x:Key="TinteOk" Color="#262E9D57" />
+  <SolidColorBrush x:Key="TinteAviso" Color="#2BD99A00" />
+  <SolidColorBrush x:Key="TinteFallo" Color="#26D2453B" />
+
+  <FontFamily x:Key="Mono">Cascadia Mono, Consolas, DejaVu Sans Mono, Liberation Mono, monospace</FontFamily>
+</ResourceDictionary>

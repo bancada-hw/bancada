@@ -1,0 +1,86 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Bancada.Vistas.VentanaPrincipal"
+        Title="Bancada · Diagnóstico de equipos"
+        Width="1200" Height="780" MinWidth="980" MinHeight="640"
+        WindowStartupLocation="CenterScreen"
+        Icon="avares://Bancada/Recursos/bancada.ico"
+        Background="{DynamicResource FondoApp}">
+  <Grid x:Name="Raiz" ColumnDefinitions="252,*" Background="{DynamicResource FondoApp}">
+
+    <!-- Barra lateral: la máscara verde de una placa -->
+    <Border Grid.Column="0" Background="{StaticResource Mascara}">
+      <Grid RowDefinitions="Auto,*,Auto">
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="12" Margin="22,20,22,14">
+          <!-- Logo (recursos/bancada-pequeno.svg): chip de cobre atravesado por la señal de prueba -->
+          <Viewbox Width="40" Height="40">
+            <Canvas Width="256" Height="256">
+              <Rectangle Width="256" Height="256" RadiusX="56" RadiusY="56">
+                <Rectangle.Fill>
+                  <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+                    <GradientStop Offset="0" Color="#1F6A50" />
+                    <GradientStop Offset="1" Color="#0A3024" />
+                  </LinearGradientBrush>
+                </Rectangle.Fill>
+              </Rectangle>
+              <Rectangle Canvas.Left="48" Canvas.Top="48" Width="160" Height="160" RadiusX="30" RadiusY="30">
+                <Rectangle.Fill>
+                  <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                    <GradientStop Offset="0" Color="#F0B27A" />
+                    <GradientStop Offset="1" Color="#C96F33" />
+                  </LinearGradientBrush>
+                </Rectangle.Fill>
+              </Rectangle>
+              <Path Stroke="#E09A5C" StrokeThickness="24" StrokeLineCap="Round"
+                    Data="M8,128 H60 M196,128 H248" />
+              <Path Stroke="{StaticResource Mascara}" StrokeThickness="24" StrokeLineCap="Flat" StrokeJoin="Round"
+                    Data="M48,128 H78 L100,92 L128,176 L154,80 L176,128 H208" />
+            </Canvas>
+          </Viewbox>
+          <StackPanel VerticalAlignment="Center" Spacing="1">
+            <TextBlock Text="Bancada" FontSize="22" FontWeight="Bold" Foreground="{StaticResource Serigrafia}" />
+            <TextBlock x:Name="TextoSubtitulo" Text="" FontSize="11.5" Foreground="{StaticResource SerigrafiaSuave}" />
+          </StackPanel>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+          <StackPanel x:Name="PanelNav" Margin="12,0,12,8" Spacing="1" />
+        </ScrollViewer>
+
+        <Grid Grid.Row="2" Height="164" ClipToBounds="True">
+          <!-- Pistas de cobre (por encima del texto, sin cruzarlo) -->
+          <Canvas Height="34" Opacity="0.32" ClipToBounds="True" VerticalAlignment="Top">
+            <Path Stroke="{StaticResource CobreBrillo}" StrokeThickness="1.6" StrokeLineCap="Round" StrokeJoin="Round"
+                  Data="M-5,10 H70 L80,4 H260 M-5,20 H120 L130,12 H188 M-5,30 H44 L54,24 H150 L158,30 H260" />
+            <Ellipse Canvas.Left="76" Canvas.Top="0" Width="8" Height="8" Stroke="{StaticResource CobreBrillo}" StrokeThickness="1.6" Fill="{StaticResource Mascara}" />
+            <Ellipse Canvas.Left="186" Canvas.Top="8" Width="8" Height="8" Stroke="{StaticResource CobreBrillo}" StrokeThickness="1.6" Fill="{StaticResource Mascara}" />
+          </Canvas>
+          <StackPanel Margin="24,0,24,14" VerticalAlignment="Bottom" Spacing="3">
+            <TextBlock x:Name="TextoTipo" Text="" FontSize="12" FontWeight="SemiBold"
+                       Foreground="{StaticResource CobreBrillo}" />
+            <TextBlock x:Name="TextoModelo" Text="" FontSize="12" TextWrapping="Wrap"
+                       Foreground="{StaticResource Serigrafia}" />
+            <!-- Idioma: se elige aquí y se recuerda -->
+            <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,8,0,0">
+              <Path Width="15" Height="15" Stretch="Uniform" Stroke="{StaticResource SerigrafiaSuave}" StrokeThickness="1.6"
+                    VerticalAlignment="Center"
+                    Data="M12,3 A9,9 0 1 0 12,21 A9,9 0 1 0 12,3 Z M3,12 H21 M12,3 C8.5,7 8.5,17 12,21 M12,3 C15.5,7 15.5,17 12,21" />
+              <ComboBox x:Name="SelectorIdioma" MinWidth="120" FontSize="12" Padding="8,3"
+                        Background="{StaticResource MascaraClara}" Foreground="{StaticResource Serigrafia}"
+                        BorderThickness="0" CornerRadius="6" />
+            </StackPanel>
+            <TextBlock x:Name="TextoVersion" Text="" FontSize="11" Margin="0,2,0,0"
+                       Foreground="{StaticResource SerigrafiaSuave}" />
+          </StackPanel>
+        </Grid>
+      </Grid>
+    </Border>
+
+    <!-- Arriba, la barra de la revisión completa (solo mientras dura) -->
+    <DockPanel Grid.Column="1">
+      <ContentControl x:Name="ZonaGuia" DockPanel.Dock="Top" />
+      <ContentControl x:Name="Contenido" />
+    </DockPanel>
+  </Grid>
+</Window>

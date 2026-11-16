@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Bancada</AssemblyName>
+    <RootNamespace>Bancada</RootNamespace>
+    <Version>0.2.0</Version>
+    <Product>Bancada</Product>
+    <Authors>Bill Bull</Authors>
+    <Company>Bill Bull</Company>
+    <Copyright>Copyright © 2026 Bill Bull · GPL-3.0-or-later</Copyright>
+    <Description>Bancada · diagnóstico de hardware libre y gratuito</Description>
+    <RepositoryUrl>https://github.com/bancada-hw/bancada</RepositoryUrl>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!-- Icono del ejecutable en Windows (recursos/bancada.ico: 16–256 px; hasta 32 px usa la versión simplificada). -->
+    <ApplicationIcon>..\..\recursos\bancada.ico</ApplicationIcon>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <SatelliteResourceLanguages>es;en</SatelliteResourceLanguages>
+    <!-- Sin dependencia de libicu: arranca en cualquier distribución Linux. Los números se formatean a mano (Formato). -->
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <!-- Acceso directo a memoria en la cámara (V4L2), la prueba de RAM y la de discos. -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!-- Que ninguna ruta del equipo donde se compila quede dentro del ejecutable. -->
+    <Deterministic>true</Deterministic>
+    <PathMap>$(MSBuildProjectDirectory)=/bancada</PathMap>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="12.1.6" />
+    <PackageReference Include="Avalonia.Desktop" Version="12.1.6" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="12.1.6" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="12.1.6" />
+    <PackageReference Include="System.Management" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Icono de la ventana y de la barra de tareas (Windows y Linux). -->
+    <AvaloniaResource Include="..\..\recursos\bancada.ico" Link="Recursos\bancada.ico" />
+    <!-- Traducciones: Idiomas/xx.json (texto en castellano → texto traducido). -->
+    <EmbeddedResource Include="Idiomas\*.json" LogicalName="Idiomas.%(Filename).json" />
+    <!-- Vídeo de la prueba de batería: 20 s de 1080p H.264 generados para Bancada (fractal, sin derechos de terceros).
+         Va en trozos (bateria.mp4.0, .1…) y el primero solo tiene 6 bytes, para que ningún trozo empiece como un MP4: algunas carpetas sincronizadas «arreglan» los MP4 y lo estropean. Se une al usarlo. -->
+    <EmbeddedResource Include="Video\bateria.mp4.*" LogicalName="Video.%(Filename)%(Extension)" />
+    <!-- Tx("…") y Tf("…", datos) disponibles en todo el proyecto. -->
+    <Using Include="Bancada.Modelo.Idioma" Static="true" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Banco de pruebas del hardware real (pruebas/Bancada.Pruebas.cs). -->
+    <InternalsVisibleTo Include="Bancada.Pruebas" />
+  </ItemGroup>
+
+</Project>
