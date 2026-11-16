@@ -28,7 +28,7 @@ Le **Résumé** montre ce que contient l'ordinateur : marque, modèle et numéro
 tout-en-un, mini PC), processeur, RAM et emplacements occupés, cartes graphiques, disques et leur santé,
 batterie, carte mère et BIOS.
 
-## Bilan complet (recommandé)
+## Bilan complet (guidé)
 
 ![Bilan complet](../capturas/fr/revision.png)
 

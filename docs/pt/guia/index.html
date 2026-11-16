@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia de uso · Bancada</title>
+<meta name="description" content="A Bancada testa notebooks e desktops peça por peça no Windows e no Linux: teclado, tela, bateria, discos, memória, processador, placa de vídeo e mais. Nativa, livre e gratuita.">
+<meta name="theme-color" content="#0B241C">
+<meta property="og:title" content="Bancada · Diagnóstico de hardware para técnicos">
+<meta property="og:description" content="A Bancada testa notebooks e desktops peça por peça no Windows e no Linux: teclado, tela, bateria, discos, memória, processador, placa de vídeo e mais. Nativa, livre e gratuita.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bancada-hw.github.io/bancada/pt/guia/">
+<meta property="og:image" content="https://bancada-hw.github.io/bancada/capturas/pt/inicio.png">
+<link rel="canonical" href="https://bancada-hw.github.io/bancada/pt/guia/">
+<link rel="alternate" hreflang="es" href="https://bancada-hw.github.io/bancada/es/guia/">
+<link rel="alternate" hreflang="en" href="https://bancada-hw.github.io/bancada/en/guia/">
+<link rel="alternate" hreflang="pt" href="https://bancada-hw.github.io/bancada/pt/guia/">
+<link rel="alternate" hreflang="fr" href="https://bancada-hw.github.io/bancada/fr/guia/">
+<link rel="alternate" hreflang="de" href="https://bancada-hw.github.io/bancada/de/guia/">
+<link rel="alternate" hreflang="it" href="https://bancada-hw.github.io/bancada/it/guia/">
+<link rel="icon" href="../../assets/bancada.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/web.css">
+</head>
+<body>
+<svg class="sprite" aria-hidden="true">
+  <symbol id="ico-win" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5.5 10.5 4.4v7.1H3zm8.5-1.2L21 3v8.5h-9.5zM3 12.5h7.5v7.1L3 18.5zm8.5 0H21V21l-9.5-1.3z"/></symbol>
+  <symbol id="ico-linux" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c-2.2 0-3.6 1.9-3.6 4.6 0 1.6.4 2.6-.5 4.1C6.6 12.8 5 15 5.6 17.3c-1 .4-1.9 1.1-1.5 2 .5 1 2.4.6 3.6 1.4 1.3.9 3 1.1 4.3.3 1.3.8 3 .6 4.3-.3 1.2-.8 3.1-.4 3.6-1.4.4-.9-.5-1.6-1.5-2 .6-2.3-1-4.5-2.3-6.6-.9-1.5-.5-2.5-.5-4.1C15.6 3.9 14.2 2 12 2zm-1.6 4.2c.5 0 .8.6.8 1.3 0 .4-.1.7-.3 1l-.9-.3c.1-.2.1-.4.1-.7 0-.4-.2-.7-.4-.7s-.4.3-.4.7v.2l-.7-.3c0-.7.4-1.2 1.8-1.2zm3.2 0c.8 0 1.2.6 1.2 1.3l-.8.3v-.2c0-.4-.2-.7-.4-.7s-.4.3-.4.7c0 .2 0 .4.1.6l-.8.3c-.2-.3-.3-.6-.3-1 0-.7.5-1.3 1.4-1.3z"/></symbol>
+  <symbol id="ico-gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></symbol>
+</svg>
+
+<header class="cabecera">
+  <div class="ancho cabecera-in">
+    <a class="marca" href="../"><img src="../../assets/bancada.svg" alt="" width="34" height="34"><span>Bancada</span></a>
+    <nav class="menu" aria-label="Bancada">
+      <a href="../#pruebas">Testes</a>
+      <a href="../#capturas">Telas</a>
+      <a href="../#como">Como usar</a>
+      <a href="../#ficha">Ficha técnica</a>
+      <a href="../#apoyar">Apoiar</a>
+      <a href="./" aria-current="page">Guia</a>
+    </nav>
+    <div class="cabecera-der">
+      <label class="idioma"><span class="sr">Idioma</span>
+        <select id="idioma" aria-label="Idioma / Language"><option value="es">Español</option><option value="en">English</option><option value="pt" selected>Português</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="it">Italiano</option></select>
+      </label>
+      <a class="icono-gh" href="https://github.com/bancada-hw/bancada" aria-label="GitHub"><svg width="22" height="22"><use href="#ico-gh"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main class="ancho guia">
+  <nav class="guia-indice" aria-label="Nesta página">
+    <p>Nesta página</p>
+    <ul><li class=""><a href="#antes-de-começar">Antes de começar</a></li><li class=""><a href="#a-tela-principal">A tela principal</a></li><li class=""><a href="#revisão-completa-guiada">Revisão completa (guiada)</a></li><li class=""><a href="#testes-um-a-um">Testes um a um</a></li><li class="sub"><a href="#teclado">Teclado</a></li><li class="sub"><a href="#touchpad-e-mouse">Touchpad e mouse</a></li><li class="sub"><a href="#tela">Tela</a></li><li class="sub"><a href="#som">Som</a></li><li class="sub"><a href="#câmera">Câmera</a></li><li class="sub"><a href="#rede">Rede</a></li><li class="sub"><a href="#portas-usb">Portas USB</a></li><li class="sub"><a href="#bateria-e-carregador">Bateria e carregador</a></li><li class="sub"><a href="#discos">Discos</a></li><li class="sub"><a href="#memória-ram">Memória RAM</a></li><li class="sub"><a href="#processador">Processador</a></li><li class="sub"><a href="#placa-de-vídeo">Placa de vídeo</a></li><li class="sub"><a href="#suspensão">Suspensão</a></li><li class="sub"><a href="#placa-mãe">Placa-mãe</a></li><li class=""><a href="#o-relatório">O relatório</a></li><li class=""><a href="#problemas-frequentes">Problemas frequentes</a></li></ul>
+  </nav>
+  <article class="guia-texto">
+    <h1>Guia de uso da Bancada</h1>
+<h2 id="antes-de-começar">Antes de começar</h2>
+<ol><li><strong>Baixe</strong> o executável do seu sistema na <a href="https://github.com/bancada-hw/bancada/releases/latest">última versão</a>. Você pode levá-lo num pendrive: não é instalado e não deixa nada no computador além das suas configurações (idioma e teclado).</li><li><strong>Abra-o</strong> no computador que vai revisar.<ul><li>Windows: clique duas vezes. Na primeira vez pode aparecer <em>«O Windows protegeu o computador»</em>: clique em <em>Mais informações › Executar assim mesmo</em>.</li><li>Linux: <code>chmod +x Bancada-linux-x64 &amp;&amp; ./Bancada-linux-x64</code>.</li></ul></li><li><strong>Tenha à mão</strong>: o carregador (se for notebook), um pendrive ou mouse USB para as portas e, para testar a entrada de fone, um fone de ouvido.</li><li><strong>Permissões.</strong> Quase tudo funciona como usuário comum. Como administrador (Windows) ou com <code>sudo</code> (Linux) você vê também o número de série, os módulos de RAM e o SMART completo dos discos SATA.</li></ol>
+<p>O idioma é escolhido na parte de baixo da barra lateral (ícone do globo) e fica salvo.</p>
+<h2 id="a-tela-principal">A tela principal</h2>
+<p>À esquerda fica a lista de testes. O ponto colorido ao lado de cada um indica o veredito: <strong>Funciona bem</strong>, <strong>Com defeitos</strong>, <strong>Não funciona</strong> ou não testado. No final de cada teste há uma barra para marcar o veredito; nos automáticos ele vem sugerido e você pode mudá-lo.</p>
+<img src="../../capturas/pt/inicio.png" alt="Resumo" width="1200" height="780" loading="lazy">
+<p>O <strong>Resumo</strong> mostra o que o computador tem: marca, modelo e número de série, tipo (notebook, desktop, all-in-one, mini PC), processador, RAM e slots ocupados, placas de vídeo, discos e sua saúde, bateria, placa-mãe e BIOS.</p>
+<h2 id="revisão-completa-guiada">Revisão completa (guiada)</h2>
+<img src="../../capturas/pt/revision.png" alt="Revisão completa" width="1200" height="780" loading="lazy">
+<p>Clique em <strong>Começar a revisão</strong>. A Bancada guia você passo a passo pelos testes em que é preciso fazer algo: teclado → som → touchpad → tela → câmera → USB → bateria → suspensão. Enquanto isso, em segundo plano e um após o outro, faz os automáticos: placa-mãe → discos → rede → memória → processador → cada placa de vídeo. O painel de baixo mostra o andamento.</p>
+<ul><li>Os testes de estresse esperam você terminar o de som, para que o barulho da ventoinha não atrapalhe.</li><li>Você pode pular um passo; o que não for testado aparece como «Não testado» no relatório.</li><li>O último passo suspende o computador por alguns segundos: <strong>salve o que estiver aberto</strong>.</li><li>Conte com uns 20 minutos. Ao terminar, clique em <strong>Terminar e ver o relatório</strong>.</li></ul>
+<h2 id="testes-um-a-um">Testes um a um</h2>
+<h3 id="teclado">Teclado</h3>
+<img src="../../capturas/pt/teclado.png" alt="Teclado" width="1200" height="780" loading="lazy">
+<p>Pressione cada tecla uma vez: as que chegam ficam verdes; as que ficam sem cor não funcionam ou não enviam sinal. O layout segue o idioma e o teclado do sistema; você pode escolher outro na lista (espanhol, latino-americano, EUA, Reino Unido, Portugal, Brasil ABNT2, alemão, francês e italiano). As teclas multimídia (combinações com Fn) aparecem em «Outras teclas recebidas». No Windows, Alt Gr acende também o Ctrl esquerdo, e Print Screen pode abrir a Ferramenta de Captura: é normal.</p>
+<h3 id="touchpad-e-mouse">Touchpad e mouse</h3>
+<p>Mova o ponteiro pela área até preenchê-la. Se em algum lugar ele parar ou pular, essa parte do touchpad está danificada: passe também pelas bordas e cantos. Teste clique esquerdo, direito e do meio, duplo clique, arrastar, a roda ou a rolagem com dois dedos, os botões laterais, a tela sensível ao toque e a caneta, se houver.</p>
+<h3 id="tela">Tela</h3>
+<p><strong>Começar teste de tela</strong> enche a tela de cores sólidas, degradês e grade. Clique, Espaço ou → avança; ← volta; Esc sai. Procure pixels mortos ou travados, manchas, vazamentos de luz nas bordas, faixas nos degradês e brilho irregular.</p>
+<h3 id="som">Som</h3>
+<p>Cada botão toca de um lado só; a varredura de graves a agudos serve para ouvir se algo vibra, zumbe ou chia. <strong>Ouvir o microfone</strong> mostra o nível ao vivo (fale ou bata palmas) e <strong>Gravar 5 segundos e reproduzir</strong> deixa você ouvir o que ele captou. Depois conecte um fone e repita para testar a entrada.</p>
+<h3 id="câmera">Câmera</h3>
+<p>Ligue cada câmera e veja se a imagem está nítida, com cores normais e sem cortes. Se sair preta, verifique a tampa de privacidade ou a tecla que a desativa. A imagem nunca é salva nem sai do computador.</p>
+<h3 id="rede">Rede</h3>
+<img src="../../capturas/pt/red.png" alt="Rede" width="1200" height="780" loading="lazy">
+<p>Lista as placas físicas com a velocidade do link, o Wi-Fi com as redes próximas (sinal, canal e banda) e o Bluetooth. A conexão é verificada passo a passo (roteador → DNS → internet → site seguro) para ver onde ela cai. <strong>Medir velocidade</strong> faz 10 s de download e 10 s de upload com os servidores da Cloudflare. Para testar a porta Ethernet, conecte um cabo a um roteador ou switch.</p>
+<h3 id="portas-usb">Portas USB</h3>
+<p>Conecte um pendrive, um mouse ou qualquer aparelho em cada porta, uma de cada vez: cada porta que responde é marcada com sua velocidade real. Se um aparelho USB 3 conectar em velocidade USB 2, teste outro cabo; se nada mudar, o conector da porta pode estar danificado. Mouse e teclado sempre funcionam em USB 1 ou 2.</p>
+<h3 id="bateria-e-carregador">Bateria e carregador</h3>
+<p>Mostra a capacidade de fábrica e a atual, a saúde, os ciclos e o consumo ao vivo.</p>
+<ul><li><strong>Teste do carregador:</strong> desconecte e reconecte seguindo os passos; verifica carregador, cabo e conector.</li><li><strong>Teste de descarga:</strong> com o carregador desconectado, mede quanto a bateria dura de verdade. Você escolhe o que o computador faz (em repouso com a tela ligada, navegando, vendo vídeo ou em carga máxima), quando parar (por tempo ou ao chegar a uma porcentagem) e o brilho. Detecta quedas bruscas da porcentagem (células ruins) e um indicador descalibrado. Faça vários com usos diferentes e o relatório os reúne numa tabela de autonomia.</li></ul>
+<h3 id="discos">Discos</h3>
+<img src="../../capturas/pt/discos.png" alt="Discos" width="1200" height="780" loading="lazy">
+<p>Saúde SMART de cada disco (temperatura, horas, vida útil consumida, setores danificados), erros de leitura e gravação registrados pelo sistema e velocidade real de leitura, gravação e leitura aleatória de 4 KB. O teste de velocidade grava um arquivo temporário de até 1 GB e o apaga no final: seus arquivos não são tocados.</p>
+<h3 id="memória-ram">Memória RAM</h3>
+<p>Enche a memória livre com 8 padrões e verifica se lê exatamente o que foi gravado. Um único erro significa que um módulo está com defeito; teste os módulos um por um para descobrir qual. Com o sistema rodando só dá para testar a memória livre: para testá-la inteira, a Bancada abre o Diagnóstico de Memória do Windows ou indica como iniciar o MemTest86+ no Linux.</p>
+<h3 id="processador">Processador</h3>
+<img src="../../capturas/pt/procesador.png" alt="Processador" width="1200" height="780" loading="lazy">
+<p>Temperatura, frequência e uso ao vivo. O teste de estresse usa todos os threads e vigia se esquenta demais, se perde desempenho pela temperatura e se algum cálculo sai errado. 5 minutos bastam para ver se a refrigeração aguenta; se for notebook, conecte o carregador.</p>
+<h3 id="placa-de-vídeo">Placa de vídeo</h3>
+<img src="../../capturas/pt/grafica.png" alt="Placa de vídeo" width="1200" height="780" loading="lazy">
+<p>Escolha a placa pelo nome (dedicada, integrada ou qualquer outra) e leve-a ao máximo: temperatura e desempenho são monitorados e seus cálculos são verificados. <strong>Verificar a memória de vídeo</strong> procura falhas de VRAM, as que causam riscos e pontos coloridos. Usa OpenCL, que vem com os drivers da NVIDIA, AMD e Intel; no Linux pode ser preciso instalar o pacote OpenCL da sua placa.</p>
+<h3 id="suspensão">Suspensão</h3>
+<p>Suspende o computador e verifica se ele volta bem: quanto tempo dormiu, se a rede se recupera e se algum dispositivo parou de funcionar. Em computadores com suspensão moderna, acorde-o você com uma tecla, como faria o cliente. Se ele não voltar e for preciso forçar o desligamento, ao abrir a Bancada de novo isso é marcado como falha.</p>
+<h3 id="placa-mãe">Placa-mãe</h3>
+<img src="../../capturas/pt/placa.png" alt="Placa-mãe" width="1200" height="780" loading="lazy">
+<p>Verificações automáticas: firmware e inicialização segura, chip TPM, dispositivos com falha ou sem driver, links PCI Express com menos lanes do que deveriam, erros de hardware registrados, relógio da placa (bateria CMOS) e cálculo correto em cada núcleo.</p>
+<h2 id="o-relatório">O relatório</h2>
+<img src="../../capturas/pt/informe.png" alt="Relatório" width="1200" height="780" loading="lazy">
+<p>Reúne todos os testes com suas medições, observações e vereditos. Adicione suas notas (estado físico, amassados, o que o cliente contou…) e clique em <strong>Salvar relatório em PDF</strong>: ele é salvo em Documentos e inclui o número de série do computador.</p>
+<h2 id="problemas-frequentes">Problemas frequentes</h2>
+<table><thead><tr><th>O que acontece</th><th>O que fazer</th></tr></thead><tbody><tr><td>O Windows avisa que o programa não é seguro</td><td>O executável ainda não é assinado: <em>Mais informações › Executar assim mesmo</em>.</td></tr><tr><td>Não aparece a temperatura do processador no Windows</td><td>Alguns computadores só a informam a programas com driver próprio. O teste de estresse continua detectando perda de desempenho e erros.</td></tr><tr><td>«Não há nenhum driver OpenCL instalado» na placa de vídeo</td><td>Instale ou atualize o driver no site da NVIDIA, AMD ou Intel. No Linux: <code>intel-opencl-icd</code>, <code>mesa-opencl-icd</code> ou ROCm.</td></tr><tr><td>Não aparecem as redes Wi-Fi no Windows</td><td>Ative <em>Configurações › Privacidade e segurança › Localização › Permitir que aplicativos da área de trabalho acessem sua localização</em>.</td></tr><tr><td>No Linux não aparecem os dados SMART</td><td>Instale <code>smartmontools</code> e abra a Bancada com <code>sudo</code>.</td></tr><tr><td>No Linux não abre e pede libICE ou libSM</td><td>Instale <code>libice6</code> e <code>libsm6</code> (a interface em X11 precisa delas).</td></tr></tbody></table>
+    <div class="guia-acciones">
+      <a class="boton linea" href="../">← Voltar ao site</a>
+      <a class="boton linea" href="https://github.com/bancada-hw/bancada/blob/main/docs/guia/pt.md"><svg width="18" height="18"><use href="#ico-gh"/></svg>Ver no GitHub</a>
+    </div>
+  </article>
+</main>
+
+<footer class="pie">
+  <div class="ancho pie-in">
+    <div class="marca"><img src="../../assets/bancada.svg" alt="" width="28" height="28"><span>Bancada</span></div>
+    <p>Diagnóstico de hardware livre e gratuito. © 2026 Bill Bull · <a href="https://github.com/bancada-hw/bancada/blob/main/LICENSE">Licença GPL-3.0</a> · <a href="https://github.com/bancada-hw/bancada/blob/main/AVISO.md">Condições adicionais</a><br>Este site não usa cookies nem rastreadores.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var sel = document.getElementById('idioma');
+  sel.addEventListener('change', function () { location.href = '../../' + sel.value + '/guia/' + location.hash; });
+})();
+</script>
+</body>
+</html>

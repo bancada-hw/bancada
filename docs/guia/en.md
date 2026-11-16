@@ -28,7 +28,7 @@ At the end of each test there's a bar to set the verdict; automatic tests propos
 all-in-one, mini PC), processor, RAM and slots in use, graphics, drives and their health, battery,
 motherboard and BIOS.
 
-## Full check-up (recommended)
+## Full check-up (guided)
 
 ![Full check-up](../capturas/en/revision.png)
 

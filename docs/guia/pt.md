@@ -28,7 +28,7 @@ O **Resumo** mostra o que o computador tem: marca, modelo e número de série, t
 all-in-one, mini PC), processador, RAM e slots ocupados, placas de vídeo, discos e sua saúde, bateria,
 placa-mãe e BIOS.
 
-## Revisão completa (o recomendado)
+## Revisão completa (guiada)
 
 ![Revisão completa](../capturas/pt/revision.png)
 

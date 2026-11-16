@@ -35,10 +35,10 @@
     <nav class="menu" aria-label="Bancada">
       <a href="#pruebas">Tests</a>
       <a href="#capturas">Captures</a>
-      <a href="#como">Fonctionnement</a>
+      <a href="#como">Utilisation</a>
       <a href="#ficha">Fiche technique</a>
       <a href="#apoyar">Soutenir</a>
-      <a href="https://github.com/bancada-hw/bancada/blob/main/docs/guia/fr.md">Guide</a>
+      <a href="guia/">Guide</a>
     </nav>
     <div class="cabecera-der">
       <label class="idioma"><span class="sr">Idioma</span>
@@ -73,6 +73,7 @@
         <a class="boton mascara" data-so="linux" href="https://github.com/bancada-hw/bancada/releases/latest/download/Bancada-linux-x64"><svg width="18" height="18"><use href="#ico-linux"/></svg>Télécharger pour Linux</a>
         <a class="boton linea" href="https://github.com/bancada-hw/bancada"><svg width="18" height="18"><use href="#ico-gh"/></svg>Code sur GitHub</a>
       </div>
+      <p class="enlace-guia"><a href="#como">Première fois ? Voyez comment l'utiliser →</a></p>
       <p class="nota">Un seul fichier d'environ 60 Mo · sans installation · Windows 10/11 et Linux x64<br><code>Sous Linux : chmod +x Bancada-linux-x64</code></p>
     </div>
     <figure class="monitor">
@@ -92,10 +93,10 @@
   <div class="ancho">
     <p class="serigrafia">J1 · Tests</p>
     <h2>Tout ce qui peut lâcher, vérifié</h2>
-    <p class="entradilla">Chaque test se termine par un verdict : fonctionne, avec défauts ou ne fonctionne pas. Les tests automatiques en proposent un, vous décidez.</p>
+    <p class="entradilla">Chaque test se termine par un verdict : fonctionne bien, avec défauts ou ne fonctionne pas. Les tests automatiques en proposent un, vous décidez.</p>
     <ul class="rejilla">
       <li class="pieza"><span class="ref">U01</span><h3>Résumé</h3><p>Marque, modèle et numéro de série, processeur, RAM par emplacement, cartes graphiques, disques, batterie, carte mère et BIOS.</p></li>
-      <li class="pieza destacada"><span class="ref">U02</span><h3>Contrôle complet</h3><p>Vous guide dans les tests manuels pendant qu'il fait seul les tests automatiques. Environ 20 minutes.</p></li>
+      <li class="pieza destacada"><span class="ref">U02</span><h3>Bilan complet</h3><p>Vous guide dans les tests manuels pendant qu'il fait seul les tests automatiques. Environ 20 minutes.</p></li>
       <li class="pieza"><span class="ref">U03</span><h3>Clavier</h3><p>Clavier dessiné avec sa vraie forme (ISO, ANSI, ABNT2). Chaque touche reçue s'allume.</p></li>
       <li class="pieza"><span class="ref">U04</span><h3>Pavé tactile et souris</h3><p>Zone qui se colore au passage, boutons, gestes, molette, écran tactile et stylet.</p></li>
       <li class="pieza"><span class="ref">U05</span><h3>Écran</h3><p>Couleurs, dégradés et grille en plein écran pour les pixels morts et les fuites de lumière.</p></li>
@@ -122,7 +123,7 @@
     <p class="entradilla">Une interface native à l'image d'une carte mère : vernis vert, pistes de cuivre et sérigraphie.</p>
     <div class="pestanas" role="tablist">
       <button role="tab" aria-selected="true" data-vista="inicio">Résumé</button>
-      <button role="tab" aria-selected="false" data-vista="revision">Contrôle</button>
+      <button role="tab" aria-selected="false" data-vista="revision">Bilan</button>
       <button role="tab" aria-selected="false" data-vista="teclado">Clavier</button>
       <button role="tab" aria-selected="false" data-vista="red">Réseau</button>
       <button role="tab" aria-selected="false" data-vista="discos">Disques</button>
@@ -140,13 +141,27 @@
 
 <section id="como" class="seccion">
   <div class="ancho">
-    <p class="serigrafia">J4 · Fonctionnement</p>
-    <h2>Trois étapes, vingt minutes</h2>
-    <ol class="pasos">
-      <li><span class="num">01</span><h3>Lancez-le</h3><p>Depuis une clé USB ou un téléchargement. Pas d'installation, pas de compte, aucune trace.</p></li>
-      <li><span class="num">02</span><h3>Suivez le contrôle guidé</h3><p>Vous appuyez sur des touches, regardez et écoutez. Pendant ce temps, Bancada teste disques, réseau, mémoire, processeur et carte graphique en arrière-plan.</p></li>
-      <li><span class="num">03</span><h3>Remettez le rapport</h3><p>Un PDF avec chaque mesure et chaque verdict, vos notes et le numéro de série de la machine.</p></li>
-    </ol>
+    <p class="serigrafia">J4 · Utilisation</p>
+    <h2>Deux façons de l'utiliser</h2>
+    <p class="entradilla">Contrôlez toute la machine avec le guide pas à pas, ou allez droit à la pièce qui vous intéresse. Vous pouvez mélanger les deux : ce que vous testez de votre côté compte aussi pour le rapport.</p>
+    <div class="modos">
+      <article class="modo destacado">
+        <p class="modo-tag">Machine entière · environ 20 min</p>
+        <h3>Bilan guidé</h3>
+        <p>Pour contrôler une machine de fond en comble avant de la vendre, la rendre ou l'acheter.</p>
+        <ol><li>Dans la barre latérale, ouvrez <b>Bilan complet</b> et cliquez sur <b>Lancer le bilan</b>.</li><li>Faites ce que demande chaque étape : appuyer sur des touches, regarder l'écran, écouter, brancher un appareil USB… Pendant ce temps, disques, réseau, mémoire, processeur et carte graphique se testent seuls.</li><li>Passez les étapes inutiles. À la fin, cliquez sur <b>Terminer et voir le rapport</b>.</li></ol>
+      </article>
+      <article class="modo">
+        <p class="modo-tag">Une pièce · à votre rythme</p>
+        <h3>Test par test</h3>
+        <p>Pour vérifier quelque chose de précis : un clavier défaillant, une batterie suspecte, un disque bruyant.</p>
+        <ol><li>Choisissez le test dans la barre latérale, par exemple <b>Clavier</b> ou <b>Batterie</b>.</li><li>Suivez les indications à l'écran. Les tests automatiques proposent un verdict.</li><li>En bas, cochez <b>Fonctionne bien</b>, <b>Avec défauts</b> ou <b>Ne fonctionne pas</b>. Le point de la barre latérale change de couleur.</li></ol>
+      </article>
+    </div>
+    <div class="modo-pie">
+      <p>Dans les deux cas, le rapport rassemble tout ce qui a été testé : ajoutez vos remarques et cliquez sur <b>Enregistrer le rapport en PDF</b>.</p>
+      <a class="boton cobre" href="guia/">Guide d'utilisation complet →</a>
+    </div>
   </div>
 </section>
 
@@ -155,7 +170,7 @@
     <div>
       <p class="serigrafia">J5 · Fiche technique</p>
       <h2>Fiche technique</h2>
-      <p class="entradilla">Fait par des techniciens, pour des techniciens. Pas de couche web, rien à installer.</p>
+      <p class="entradilla">Fait par des techniciens, pour des techniciens. Un seul fichier, rien à installer.</p>
       <div class="privacidad">
         <h3>Vos machines et celles de vos clients restent sur l'établi</h3>
         <p>Bancada ne collecte ni n'envoie aucune donnée. La caméra et le micro ne sont jamais enregistrés, et le rapport reste dans votre dossier Documents. Il ne va sur Internet que pour :</p>
@@ -165,7 +180,7 @@
     <dl class="hoja">
       <div><dt>Plateformes</dt><dd>Windows 10/11 x64 · Linux x64</dd></div>
       <div><dt>Format</dt><dd>Un exécutable autonome d'environ 60 Mo</dd></div>
-      <div><dt>Interface</dt><dd>Native avec Avalonia 12 sur .NET 10 (sans Electron)</dd></div>
+      <div><dt>Interface</dt><dd>Native, avec l'apparence de chaque système (Avalonia 12 sur .NET 10)</dd></div>
       <div><dt>Droits</dt><dd>Utilisateur standard ; en administrateur ou avec sudo, aussi barrettes RAM, numéro de série et SMART SATA</dd></div>
       <div><dt>Langues</dt><dd>Español, English, Português, Français, Deutsch, Italiano</dd></div>
       <div><dt>Rapport</dt><dd>PDF A4 dans la langue choisie</dd></div>

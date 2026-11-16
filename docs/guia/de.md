@@ -28,7 +28,7 @@ Die **Übersicht** zeigt, was im Computer steckt: Hersteller, Modell und Serienn
 All-in-One, Mini-PC), Prozessor, RAM und belegte Steckplätze, Grafikkarten, Laufwerke mit Zustand, Akku,
 Mainboard und BIOS.
 
-## Gesamtprüfung (empfohlen)
+## Gesamtprüfung (geführt)
 
 ![Gesamtprüfung](../capturas/de/revision.png)
 

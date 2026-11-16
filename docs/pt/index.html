@@ -35,10 +35,10 @@
     <nav class="menu" aria-label="Bancada">
       <a href="#pruebas">Testes</a>
       <a href="#capturas">Telas</a>
-      <a href="#como">Como funciona</a>
+      <a href="#como">Como usar</a>
       <a href="#ficha">Ficha técnica</a>
       <a href="#apoyar">Apoiar</a>
-      <a href="https://github.com/bancada-hw/bancada/blob/main/docs/guia/pt.md">Guia</a>
+      <a href="guia/">Guia</a>
     </nav>
     <div class="cabecera-der">
       <label class="idioma"><span class="sr">Idioma</span>
@@ -73,6 +73,7 @@
         <a class="boton mascara" data-so="linux" href="https://github.com/bancada-hw/bancada/releases/latest/download/Bancada-linux-x64"><svg width="18" height="18"><use href="#ico-linux"/></svg>Baixar para Linux</a>
         <a class="boton linea" href="https://github.com/bancada-hw/bancada"><svg width="18" height="18"><use href="#ico-gh"/></svg>Código no GitHub</a>
       </div>
+      <p class="enlace-guia"><a href="#como">Primeira vez? Veja como se usa →</a></p>
       <p class="nota">Um único arquivo de cerca de 60 MB · sem instalar · Windows 10/11 e Linux x64<br><code>No Linux: chmod +x Bancada-linux-x64</code></p>
     </div>
     <figure class="monitor">
@@ -92,7 +93,7 @@
   <div class="ancho">
     <p class="serigrafia">J1 · Testes</p>
     <h2>Tudo o que pode quebrar, testado</h2>
-    <p class="entradilla">Cada teste termina com um veredito: funciona, com defeitos ou não funciona. Os automáticos sugerem um e você decide.</p>
+    <p class="entradilla">Cada teste termina com um veredito: funciona bem, com defeitos ou não funciona. Os automáticos sugerem um e você decide.</p>
     <ul class="rejilla">
       <li class="pieza"><span class="ref">U01</span><h3>Resumo</h3><p>Marca, modelo e número de série, processador, RAM por slot, placas de vídeo, discos, bateria, placa-mãe e BIOS.</p></li>
       <li class="pieza destacada"><span class="ref">U02</span><h3>Revisão completa</h3><p>Guia você pelos testes manuais enquanto faz sozinha os automáticos. Cerca de 20 minutos.</p></li>
@@ -140,13 +141,27 @@
 
 <section id="como" class="seccion">
   <div class="ancho">
-    <p class="serigrafia">J4 · Como funciona</p>
-    <h2>Três passos, vinte minutos</h2>
-    <ol class="pasos">
-      <li><span class="num">01</span><h3>Abra</h3><p>De um pendrive ou de um download. Não instala, não pede conta e não deixa rastro.</p></li>
-      <li><span class="num">02</span><h3>Siga a revisão guiada</h3><p>Você aperta teclas, olha e escuta. Enquanto isso, a Bancada testa discos, rede, memória, processador e placa de vídeo em segundo plano.</p></li>
-      <li><span class="num">03</span><h3>Entregue o relatório</h3><p>Um PDF com cada medida e cada veredito, com suas notas e o número de série da máquina.</p></li>
-    </ol>
+    <p class="serigrafia">J4 · Como usar</p>
+    <h2>Duas formas de usar</h2>
+    <p class="entradilla">Revise a máquina inteira com o guia passo a passo ou vá direto à peça que interessa. Dá para misturar as duas: o que você testar por conta própria também entra no relatório.</p>
+    <div class="modos">
+      <article class="modo destacado">
+        <p class="modo-tag">Máquina inteira · uns 20 min</p>
+        <h3>Revisão guiada</h3>
+        <p>Para revisar uma máquina de cima a baixo antes de vender, entregar ou comprar.</p>
+        <ol><li>Na barra lateral, abra <b>Revisão completa</b> e clique em <b>Começar a revisão</b>.</li><li>Faça o que cada passo pede: apertar teclas, olhar a tela, escutar, conectar um USB… Enquanto isso, discos, rede, memória, processador e placa de vídeo são testados sozinhos.</li><li>Se um passo não interessa, pule. No fim, clique em <b>Terminar e ver o relatório</b>.</li></ol>
+      </article>
+      <article class="modo">
+        <p class="modo-tag">Uma peça · no seu ritmo</p>
+        <h3>Teste por teste</h3>
+        <p>Para verificar algo específico: um teclado com falha, uma bateria suspeita, um disco barulhento.</p>
+        <ol><li>Escolha o teste na barra lateral, por exemplo <b>Teclado</b> ou <b>Bateria</b>.</li><li>Siga o que aparece na tela. Os testes automáticos sugerem um veredito.</li><li>Embaixo, marque <b>Funciona bem</b>, <b>Com defeitos</b> ou <b>Não funciona</b>. O ponto da barra lateral muda de cor.</li></ol>
+      </article>
+    </div>
+    <div class="modo-pie">
+      <p>Nos dois casos, o relatório junta tudo o que foi testado: adicione suas notas e clique em <b>Salvar relatório em PDF</b>.</p>
+      <a class="boton cobre" href="guia/">Guia de uso completo →</a>
+    </div>
   </div>
 </section>
 
@@ -155,7 +170,7 @@
     <div>
       <p class="serigrafia">J5 · Ficha técnica</p>
       <h2>Ficha técnica</h2>
-      <p class="entradilla">Feita por técnicos, para técnicos. Sem camadas web, sem dependências para instalar.</p>
+      <p class="entradilla">Feita por técnicos, para técnicos. Um só arquivo, nada para instalar.</p>
       <div class="privacidad">
         <h3>Suas máquinas e as dos seus clientes não saem da bancada</h3>
         <p>A Bancada não coleta nem envia dados. Câmera e microfone não são gravados, e o relatório fica na sua pasta Documentos. Ela só acessa a Internet para:</p>
@@ -165,7 +180,7 @@
     <dl class="hoja">
       <div><dt>Plataformas</dt><dd>Windows 10/11 x64 · Linux x64</dd></div>
       <div><dt>Formato</dt><dd>Um executável autocontido de cerca de 60 MB</dd></div>
-      <div><dt>Interface</dt><dd>Nativa com Avalonia 12 sobre .NET 10 (sem Electron)</dd></div>
+      <div><dt>Interface</dt><dd>Nativa, com o visual de cada sistema (Avalonia 12 sobre .NET 10)</dd></div>
       <div><dt>Permissões</dt><dd>Usuário comum; como administrador ou sudo, também módulos de RAM, número de série e SMART SATA</dd></div>
       <div><dt>Idiomas</dt><dd>Español, English, Português, Français, Deutsch, Italiano</dd></div>
       <div><dt>Relatório</dt><dd>PDF A4 no idioma escolhido</dd></div>

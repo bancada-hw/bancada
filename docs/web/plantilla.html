@@ -67,6 +67,7 @@
         <a class="boton mascara" data-so="linux" href="https://github.com/bancada-hw/bancada/releases/latest/download/Bancada-linux-x64"><svg width="18" height="18"><use href="#ico-linux"/></svg>{{btn_linux}}</a>
         <a class="boton linea" href="https://github.com/bancada-hw/bancada"><svg width="18" height="18"><use href="#ico-gh"/></svg>{{btn_github}}</a>
       </div>
+      <p class="enlace-guia"><a href="#como">{{hero_guia}} →</a></p>
       <p class="nota">{{hero_nota}}<br><code>{{linux_nota}}</code></p>
     </div>
     <figure class="monitor">
@@ -136,11 +137,25 @@
   <div class="ancho">
     <p class="serigrafia">J4 · {{nav_como}}</p>
     <h2>{{como_titulo}}</h2>
-    <ol class="pasos">
-      <li><span class="num">01</span><h3>{{paso1_t}}</h3><p>{{paso1_d}}</p></li>
-      <li><span class="num">02</span><h3>{{paso2_t}}</h3><p>{{paso2_d}}</p></li>
-      <li><span class="num">03</span><h3>{{paso3_t}}</h3><p>{{paso3_d}}</p></li>
-    </ol>
+    <p class="entradilla">{{como_texto}}</p>
+    <div class="modos">
+      <article class="modo destacado">
+        <p class="modo-tag">{{modo1_tag}}</p>
+        <h3>{{modo1_t}}</h3>
+        <p>{{modo1_d}}</p>
+        <ol><li>{{modo1_p1}}</li><li>{{modo1_p2}}</li><li>{{modo1_p3}}</li></ol>
+      </article>
+      <article class="modo">
+        <p class="modo-tag">{{modo2_tag}}</p>
+        <h3>{{modo2_t}}</h3>
+        <p>{{modo2_d}}</p>
+        <ol><li>{{modo2_p1}}</li><li>{{modo2_p2}}</li><li>{{modo2_p3}}</li></ol>
+      </article>
+    </div>
+    <div class="modo-pie">
+      <p>{{como_informe}}</p>
+      <a class="boton cobre" href="guia/">{{btn_guia}} →</a>
+    </div>
   </div>
 </section>
 

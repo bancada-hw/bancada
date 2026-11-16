@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anleitung · Bancada</title>
+<meta name="description" content="Bancada prüft Notebooks und Desktop-PCs Teil für Teil unter Windows und Linux: Tastatur, Bildschirm, Akku, Laufwerke, Arbeitsspeicher, Prozessor, Grafikkarte und mehr. Nativ, frei und kostenlos.">
+<meta name="theme-color" content="#0B241C">
+<meta property="og:title" content="Bancada · Hardware-Diagnose für Techniker">
+<meta property="og:description" content="Bancada prüft Notebooks und Desktop-PCs Teil für Teil unter Windows und Linux: Tastatur, Bildschirm, Akku, Laufwerke, Arbeitsspeicher, Prozessor, Grafikkarte und mehr. Nativ, frei und kostenlos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bancada-hw.github.io/bancada/de/guia/">
+<meta property="og:image" content="https://bancada-hw.github.io/bancada/capturas/de/inicio.png">
+<link rel="canonical" href="https://bancada-hw.github.io/bancada/de/guia/">
+<link rel="alternate" hreflang="es" href="https://bancada-hw.github.io/bancada/es/guia/">
+<link rel="alternate" hreflang="en" href="https://bancada-hw.github.io/bancada/en/guia/">
+<link rel="alternate" hreflang="pt" href="https://bancada-hw.github.io/bancada/pt/guia/">
+<link rel="alternate" hreflang="fr" href="https://bancada-hw.github.io/bancada/fr/guia/">
+<link rel="alternate" hreflang="de" href="https://bancada-hw.github.io/bancada/de/guia/">
+<link rel="alternate" hreflang="it" href="https://bancada-hw.github.io/bancada/it/guia/">
+<link rel="icon" href="../../assets/bancada.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/web.css">
+</head>
+<body>
+<svg class="sprite" aria-hidden="true">
+  <symbol id="ico-win" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5.5 10.5 4.4v7.1H3zm8.5-1.2L21 3v8.5h-9.5zM3 12.5h7.5v7.1L3 18.5zm8.5 0H21V21l-9.5-1.3z"/></symbol>
+  <symbol id="ico-linux" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c-2.2 0-3.6 1.9-3.6 4.6 0 1.6.4 2.6-.5 4.1C6.6 12.8 5 15 5.6 17.3c-1 .4-1.9 1.1-1.5 2 .5 1 2.4.6 3.6 1.4 1.3.9 3 1.1 4.3.3 1.3.8 3 .6 4.3-.3 1.2-.8 3.1-.4 3.6-1.4.4-.9-.5-1.6-1.5-2 .6-2.3-1-4.5-2.3-6.6-.9-1.5-.5-2.5-.5-4.1C15.6 3.9 14.2 2 12 2zm-1.6 4.2c.5 0 .8.6.8 1.3 0 .4-.1.7-.3 1l-.9-.3c.1-.2.1-.4.1-.7 0-.4-.2-.7-.4-.7s-.4.3-.4.7v.2l-.7-.3c0-.7.4-1.2 1.8-1.2zm3.2 0c.8 0 1.2.6 1.2 1.3l-.8.3v-.2c0-.4-.2-.7-.4-.7s-.4.3-.4.7c0 .2 0 .4.1.6l-.8.3c-.2-.3-.3-.6-.3-1 0-.7.5-1.3 1.4-1.3z"/></symbol>
+  <symbol id="ico-gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></symbol>
+</svg>
+
+<header class="cabecera">
+  <div class="ancho cabecera-in">
+    <a class="marca" href="../"><img src="../../assets/bancada.svg" alt="" width="34" height="34"><span>Bancada</span></a>
+    <nav class="menu" aria-label="Bancada">
+      <a href="../#pruebas">Tests</a>
+      <a href="../#capturas">Bildschirmfotos</a>
+      <a href="../#como">Bedienung</a>
+      <a href="../#ficha">Datenblatt</a>
+      <a href="../#apoyar">Unterstützen</a>
+      <a href="./" aria-current="page">Anleitung</a>
+    </nav>
+    <div class="cabecera-der">
+      <label class="idioma"><span class="sr">Idioma</span>
+        <select id="idioma" aria-label="Idioma / Language"><option value="es">Español</option><option value="en">English</option><option value="pt">Português</option><option value="fr">Français</option><option value="de" selected>Deutsch</option><option value="it">Italiano</option></select>
+      </label>
+      <a class="icono-gh" href="https://github.com/bancada-hw/bancada" aria-label="GitHub"><svg width="22" height="22"><use href="#ico-gh"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main class="ancho guia">
+  <nav class="guia-indice" aria-label="Auf dieser Seite">
+    <p>Auf dieser Seite</p>
+    <ul><li class=""><a href="#bevor-sie-beginnen">Bevor Sie beginnen</a></li><li class=""><a href="#das-hauptfenster">Das Hauptfenster</a></li><li class=""><a href="#gesamtprüfung-geführt">Gesamtprüfung (geführt)</a></li><li class=""><a href="#die-tests-im-einzelnen">Die Tests im Einzelnen</a></li><li class="sub"><a href="#tastatur">Tastatur</a></li><li class="sub"><a href="#touchpad-und-maus">Touchpad und Maus</a></li><li class="sub"><a href="#bildschirm">Bildschirm</a></li><li class="sub"><a href="#ton">Ton</a></li><li class="sub"><a href="#kamera">Kamera</a></li><li class="sub"><a href="#netzwerk">Netzwerk</a></li><li class="sub"><a href="#usb-anschlüsse">USB-Anschlüsse</a></li><li class="sub"><a href="#akku-und-ladegerät">Akku und Ladegerät</a></li><li class="sub"><a href="#laufwerke">Laufwerke</a></li><li class="sub"><a href="#arbeitsspeicher">Arbeitsspeicher</a></li><li class="sub"><a href="#prozessor">Prozessor</a></li><li class="sub"><a href="#grafikkarte">Grafikkarte</a></li><li class="sub"><a href="#energiesparmodus">Energiesparmodus</a></li><li class="sub"><a href="#mainboard">Mainboard</a></li><li class=""><a href="#der-bericht">Der Bericht</a></li><li class=""><a href="#häufige-probleme">Häufige Probleme</a></li></ul>
+  </nav>
+  <article class="guia-texto">
+    <h1>Anleitung für Bancada</h1>
+<h2 id="bevor-sie-beginnen">Bevor Sie beginnen</h2>
+<ol><li><strong>Laden Sie</strong> die ausführbare Datei für Ihr System von der <a href="https://github.com/bancada-hw/bancada/releases/latest">neuesten Version</a> herunter. Sie können sie auf einem USB-Stick mitnehmen: Es wird nichts installiert, und außer den Einstellungen (Sprache und Tastatur) bleibt nichts zurück.</li><li><strong>Öffnen Sie sie</strong> auf dem Computer, den Sie prüfen.<ul><li>Windows: Doppelklick. Beim ersten Mal erscheint eventuell <em>„Der Computer wurde durch Windows geschützt“</em>: Klicken Sie auf <em>Weitere Informationen › Trotzdem ausführen</em>.</li><li>Linux: <code>chmod +x Bancada-linux-x64 &amp;&amp; ./Bancada-linux-x64</code>.</li></ul></li><li><strong>Bereithalten</strong>: das Ladegerät (bei Laptops), einen USB-Stick oder eine USB-Maus für die Anschlüsse und, um die Kopfhörerbuchse zu testen, Kopfhörer.</li><li><strong>Rechte.</strong> Fast alles funktioniert als normaler Benutzer. Als Administrator (Windows) oder mit <code>sudo</code> (Linux) sehen Sie zusätzlich die Seriennummer, die RAM-Module und die vollständigen SMART-Daten von SATA-Laufwerken.</li></ol>
+<p>Die Sprache wählen Sie unten in der Seitenleiste (Globus-Symbol); sie wird gespeichert.</p>
+<h2 id="das-hauptfenster">Das Hauptfenster</h2>
+<p>Links steht die Liste der Tests. Der farbige Punkt neben jedem Test zeigt sein Urteil: <strong>Funktioniert einwandfrei</strong>, <strong>Hat Probleme</strong>, <strong>Funktioniert nicht</strong> oder nicht getestet. Am Ende jedes Tests gibt es eine Leiste für das Urteil; automatische Tests schlagen eines vor, das Sie ändern können.</p>
+<img src="../../capturas/de/inicio.png" alt="Übersicht" width="1200" height="780" loading="lazy">
+<p>Die <strong>Übersicht</strong> zeigt, was im Computer steckt: Hersteller, Modell und Seriennummer, Typ (Laptop, Desktop-PC, All-in-One, Mini-PC), Prozessor, RAM und belegte Steckplätze, Grafikkarten, Laufwerke mit Zustand, Akku, Mainboard und BIOS.</p>
+<h2 id="gesamtprüfung-geführt">Gesamtprüfung (geführt)</h2>
+<img src="../../capturas/de/revision.png" alt="Gesamtprüfung" width="1200" height="780" loading="lazy">
+<p>Klicken Sie auf <strong>Gesamtprüfung starten</strong>. Bancada führt Sie Schritt für Schritt durch die Tests, bei denen Sie etwas tun müssen: Tastatur → Ton → Touchpad → Bildschirm → Kamera → USB → Akku → Energiesparmodus. Währenddessen laufen im Hintergrund nacheinander die automatischen Tests: Mainboard → Laufwerke → Netzwerk → Speicher → Prozessor → jede Grafikkarte. Das Feld unten zeigt den Fortschritt.</p>
+<ul><li>Die Belastungstests warten, bis Sie den Tontest abgeschlossen haben, damit das Lüftergeräusch nicht stört.</li><li>Sie können einen Schritt überspringen; was nicht getestet wird, erscheint im Bericht als „Nicht getestet“.</li><li>Der letzte Schritt versetzt den Computer für einige Sekunden in den Energiesparmodus: <strong>Speichern Sie alles, was geöffnet ist</strong>.</li><li>Rechnen Sie mit etwa 20 Minuten. Klicken Sie am Ende auf <strong>Abschließen und Bericht ansehen</strong>.</li></ul>
+<h2 id="die-tests-im-einzelnen">Die Tests im Einzelnen</h2>
+<h3 id="tastatur">Tastatur</h3>
+<img src="../../capturas/de/teclado.png" alt="Tastatur" width="1200" height="780" loading="lazy">
+<p>Drücken Sie jede Taste einmal: Ankommende Tasten werden grün; die leer bleiben, funktionieren nicht oder senden kein Signal. Das Layout folgt der Sprache und der Systemtastatur; Sie können ein anderes aus der Liste wählen (Spanisch, Lateinamerika, US, UK, Portugal, Brasilien ABNT2, Deutsch, Französisch und Italienisch). Multimediatasten (Fn-Kombinationen) erscheinen unter „Weitere empfangene Tasten“. Unter Windows leuchtet bei Alt Gr auch die linke Strg-Taste, und Druck kann das Snipping Tool öffnen: Das ist normal.</p>
+<h3 id="touchpad-und-maus">Touchpad und Maus</h3>
+<p>Bewegen Sie den Zeiger über die Fläche, bis sie ausgefüllt ist. Stockt oder springt er irgendwo, ist dieser Teil des Touchpads beschädigt: Fahren Sie auch Ränder und Ecken ab. Probieren Sie Links-, Rechts- und Mittelklick, Doppelklick, Ziehen, das Mausrad oder Scrollen mit zwei Fingern, die Seitentasten, den Touchscreen und den Stift, falls vorhanden.</p>
+<h3 id="bildschirm">Bildschirm</h3>
+<p><strong>Bildschirmtest starten</strong> füllt den Bildschirm mit Vollfarben, Verläufen und einem Raster. Klick, Leertaste oder → geht weiter; ← zurück; Esc beendet. Achten Sie auf tote oder hängende Pixel, Flecken, Lichthöfe an den Rändern, Streifen in den Verläufen und ungleichmäßige Helligkeit.</p>
+<h3 id="ton">Ton</h3>
+<p>Jede Taste spielt nur auf einer Seite; beim Sweep von tief nach hoch hören Sie, ob etwas scheppert, brummt oder knistert. <strong>Mikrofon abhören</strong> zeigt den Pegel live (sprechen oder klatschen Sie), und <strong>5 Sekunden aufnehmen und wiedergeben</strong> lässt Sie hören, was aufgenommen wurde. Schließen Sie danach Kopfhörer an und wiederholen Sie den Test für die Buchse.</p>
+<h3 id="kamera">Kamera</h3>
+<p>Schalten Sie jede Kamera ein und prüfen Sie, ob das Bild scharf ist, normale Farben hat und nicht aussetzt. Ist es schwarz, prüfen Sie die Abdeckung oder die Taste, die die Kamera deaktiviert. Das Bild wird nie gespeichert und verlässt nie den Computer.</p>
+<h3 id="netzwerk">Netzwerk</h3>
+<img src="../../capturas/de/red.png" alt="Netzwerk" width="1200" height="780" loading="lazy">
+<p>Listet die physischen Adapter mit ihrer Verbindungsgeschwindigkeit, das WLAN mit Netzwerken in der Nähe (Signal, Kanal und Band) und Bluetooth. Die Verbindung wird schrittweise geprüft (Router → DNS → Internet → sichere Website), um zu sehen, wo sie abbricht. <strong>Geschwindigkeit messen</strong> misst 10 s Download und 10 s Upload mit den Servern von Cloudflare. Um den Ethernet-Anschluss zu testen, verbinden Sie ein Kabel mit einem Router oder Switch.</p>
+<h3 id="usb-anschlüsse">USB-Anschlüsse</h3>
+<p>Stecken Sie einen USB-Stick, eine Maus oder ein anderes Gerät nacheinander in jeden Anschluss: Jeder Anschluss, der reagiert, wird mit seiner echten Geschwindigkeit markiert. Verbindet sich ein USB-3-Gerät mit USB-2-Tempo, probieren Sie ein anderes Kabel; ändert sich nichts, ist vielleicht die Buchse beschädigt. Maus und Tastatur laufen immer mit USB 1 oder 2.</p>
+<h3 id="akku-und-ladegerät">Akku und Ladegerät</h3>
+<p>Zeigt Nenn- und aktuelle Kapazität, Zustand, Zyklen und die Leistungsaufnahme live.</p>
+<ul><li><strong>Ladegerättest:</strong> Ziehen Sie das Ladegerät ab und stecken Sie es nach Anleitung wieder an; geprüft werden Ladegerät, Kabel und Ladebuchse.</li><li><strong>Entladetest:</strong> Bei abgezogenem Ladegerät misst er, wie lange der Akku wirklich hält. Sie wählen, was der Computer tut (Leerlauf mit eingeschaltetem Bildschirm, Surfen, Video oder Volllast), wann gestoppt wird (nach Zeit oder bei einem Prozentwert) und die Helligkeit. Er erkennt plötzliche Einbrüche des Prozentwerts (schlechte Zellen) und eine falsch kalibrierte Anzeige. Machen Sie mehrere mit verschiedenen Nutzungsarten: Der Bericht fasst sie in einer Laufzeittabelle zusammen.</li></ul>
+<h3 id="laufwerke">Laufwerke</h3>
+<img src="../../capturas/de/discos.png" alt="Laufwerke" width="1200" height="780" loading="lazy">
+<p>SMART-Zustand jedes Laufwerks (Temperatur, Betriebsstunden, verbrauchte Lebensdauer, defekte Sektoren), vom System protokollierte Lese- und Schreibfehler sowie die echte Lese-, Schreib- und 4-KB-Zufallsgeschwindigkeit. Der Geschwindigkeitstest schreibt eine temporäre Datei von bis zu 1 GB und löscht sie danach: Ihre Dateien bleiben unberührt.</p>
+<h3 id="arbeitsspeicher">Arbeitsspeicher</h3>
+<p>Füllt den freien Speicher mit 8 Mustern und prüft, ob genau das zurückgelesen wird, was geschrieben wurde. Ein einziger Fehler bedeutet ein defektes Modul; testen Sie die Module einzeln, um herauszufinden, welches. Bei laufendem System lässt sich nur der freie Speicher testen: Für den gesamten Speicher öffnet Bancada die Windows-Speicherdiagnose oder erklärt, wie Sie MemTest86+ unter Linux starten.</p>
+<h3 id="prozessor">Prozessor</h3>
+<img src="../../capturas/de/procesador.png" alt="Prozessor" width="1200" height="780" loading="lazy">
+<p>Temperatur, Frequenz und Auslastung live. Der Belastungstest nutzt alle Threads und überwacht, ob er zu heiß wird, wegen der Hitze drosselt oder sich verrechnet. 5 Minuten reichen, um zu sehen, ob die Kühlung mithält; schließen Sie bei einem Laptop das Ladegerät an.</p>
+<h3 id="grafikkarte">Grafikkarte</h3>
+<img src="../../capturas/de/grafica.png" alt="Grafikkarte" width="1200" height="780" loading="lazy">
+<p>Wählen Sie die Grafikkarte nach ihrem Namen (dediziert, integriert oder eine andere) und bringen Sie sie an ihre Grenze: Temperatur und Leistung werden überwacht und ihre Berechnungen geprüft. <strong>Grafikspeicher prüfen</strong> sucht VRAM-Fehler, die Linien und farbige Punkte verursachen. Bancada nutzt OpenCL, das mit den Treibern von NVIDIA, AMD und Intel kommt; unter Linux müssen Sie eventuell das OpenCL-Paket Ihrer Karte installieren.</p>
+<h3 id="energiesparmodus">Energiesparmodus</h3>
+<p>Versetzt den Computer in den Energiesparmodus und prüft, ob er richtig zurückkommt: wie lange er schlief, ob das Netzwerk wieder da ist und ob ein Gerät ausgefallen ist. Bei Computern mit modernem Standby wecken Sie ihn selbst mit einer Taste, wie es der Kunde tun würde. Kommt er nicht zurück und muss hart ausgeschaltet werden, markiert Bancada das beim nächsten Öffnen als Fehler.</p>
+<h3 id="mainboard">Mainboard</h3>
+<img src="../../capturas/de/placa.png" alt="Mainboard" width="1200" height="780" loading="lazy">
+<p>Automatische Prüfungen: Firmware und Secure Boot, TPM-Chip, fehlerhafte Geräte oder Geräte ohne Treiber, PCI-Express-Verbindungen mit weniger Lanes als vorgesehen, protokollierte Hardwarefehler, die Mainboard-Uhr (CMOS-Batterie) und korrekte Berechnung auf jedem Kern.</p>
+<h2 id="der-bericht">Der Bericht</h2>
+<img src="../../capturas/de/informe.png" alt="Bericht" width="1200" height="780" loading="lazy">
+<p>Fasst alle Tests mit Messwerten, Notizen und Urteilen zusammen. Fügen Sie eigene Notizen hinzu (äußerer Zustand, Dellen, was der Kunde gesagt hat …) und klicken Sie auf <strong>Bericht als PDF speichern</strong>: Er wird im Ordner „Dokumente“ gespeichert und enthält die Seriennummer des Computers.</p>
+<h2 id="häufige-probleme">Häufige Probleme</h2>
+<table><thead><tr><th>Was passiert</th><th>Was tun</th></tr></thead><tbody><tr><td>Windows warnt, dass das Programm nicht sicher ist</td><td>Die Datei ist noch nicht signiert: <em>Weitere Informationen › Trotzdem ausführen</em>.</td></tr><tr><td>Keine Prozessortemperatur unter Windows</td><td>Manche Computer melden sie nur Programmen mit eigenem Treiber. Der Belastungstest erkennt Leistungsverlust und Fehler trotzdem.</td></tr><tr><td>„Kein OpenCL-Treiber installiert“ bei der Grafikkarte</td><td>Installieren oder aktualisieren Sie den Treiber von der Website von NVIDIA, AMD oder Intel. Unter Linux: <code>intel-opencl-icd</code>, <code>mesa-opencl-icd</code> oder ROCm.</td></tr><tr><td>Keine WLAN-Netzwerke unter Windows</td><td>Aktivieren Sie <em>Einstellungen › Datenschutz und Sicherheit › Standort › Desktop-Apps Zugriff auf Ihren Standort erlauben</em>.</td></tr><tr><td>Keine SMART-Daten unter Linux</td><td>Installieren Sie <code>smartmontools</code> und starten Sie Bancada mit <code>sudo</code>.</td></tr><tr><td>Startet unter Linux nicht und verlangt libICE oder libSM</td><td>Installieren Sie <code>libice6</code> und <code>libsm6</code> (die X11-Oberfläche braucht sie).</td></tr></tbody></table>
+    <div class="guia-acciones">
+      <a class="boton linea" href="../">← Zurück zur Website</a>
+      <a class="boton linea" href="https://github.com/bancada-hw/bancada/blob/main/docs/guia/de.md"><svg width="18" height="18"><use href="#ico-gh"/></svg>Auf GitHub ansehen</a>
+    </div>
+  </article>
+</main>
+
+<footer class="pie">
+  <div class="ancho pie-in">
+    <div class="marca"><img src="../../assets/bancada.svg" alt="" width="28" height="28"><span>Bancada</span></div>
+    <p>Freie und kostenlose Hardware-Diagnose. © 2026 Bill Bull · <a href="https://github.com/bancada-hw/bancada/blob/main/LICENSE">GPL-3.0-Lizenz</a> · <a href="https://github.com/bancada-hw/bancada/blob/main/AVISO.md">Zusätzliche Bedingungen</a><br>Diese Website verwendet keine Cookies und keine Tracker.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var sel = document.getElementById('idioma');
+  sel.addEventListener('change', function () { location.href = '../../' + sel.value + '/guia/' + location.hash; });
+})();
+</script>
+</body>
+</html>

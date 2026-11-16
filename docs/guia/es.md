@@ -27,7 +27,7 @@ Al final de cada prueba hay una barra para marcar el veredicto; en las automáti
 **Resumen** muestra lo que lleva el equipo: marca, modelo y número de serie, tipo (portátil, sobremesa,
 todo en uno, mini PC), procesador, RAM y ranuras ocupadas, gráficas, discos con su salud, batería, placa y BIOS.
 
-## Revisión completa (lo recomendado)
+## Revisión completa (guiada)
 
 ![Revisión completa](../capturas/es/revision.png)
 

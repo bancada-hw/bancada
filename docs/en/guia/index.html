@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User guide · Bancada</title>
+<meta name="description" content="Bancada checks laptops and desktops part by part on Windows and Linux: keyboard, display, battery, drives, memory, CPU, GPU and more. Native, free and open source.">
+<meta name="theme-color" content="#0B241C">
+<meta property="og:title" content="Bancada · Hardware diagnostics for technicians">
+<meta property="og:description" content="Bancada checks laptops and desktops part by part on Windows and Linux: keyboard, display, battery, drives, memory, CPU, GPU and more. Native, free and open source.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bancada-hw.github.io/bancada/en/guia/">
+<meta property="og:image" content="https://bancada-hw.github.io/bancada/capturas/en/inicio.png">
+<link rel="canonical" href="https://bancada-hw.github.io/bancada/en/guia/">
+<link rel="alternate" hreflang="es" href="https://bancada-hw.github.io/bancada/es/guia/">
+<link rel="alternate" hreflang="en" href="https://bancada-hw.github.io/bancada/en/guia/">
+<link rel="alternate" hreflang="pt" href="https://bancada-hw.github.io/bancada/pt/guia/">
+<link rel="alternate" hreflang="fr" href="https://bancada-hw.github.io/bancada/fr/guia/">
+<link rel="alternate" hreflang="de" href="https://bancada-hw.github.io/bancada/de/guia/">
+<link rel="alternate" hreflang="it" href="https://bancada-hw.github.io/bancada/it/guia/">
+<link rel="icon" href="../../assets/bancada.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/web.css">
+</head>
+<body>
+<svg class="sprite" aria-hidden="true">
+  <symbol id="ico-win" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5.5 10.5 4.4v7.1H3zm8.5-1.2L21 3v8.5h-9.5zM3 12.5h7.5v7.1L3 18.5zm8.5 0H21V21l-9.5-1.3z"/></symbol>
+  <symbol id="ico-linux" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c-2.2 0-3.6 1.9-3.6 4.6 0 1.6.4 2.6-.5 4.1C6.6 12.8 5 15 5.6 17.3c-1 .4-1.9 1.1-1.5 2 .5 1 2.4.6 3.6 1.4 1.3.9 3 1.1 4.3.3 1.3.8 3 .6 4.3-.3 1.2-.8 3.1-.4 3.6-1.4.4-.9-.5-1.6-1.5-2 .6-2.3-1-4.5-2.3-6.6-.9-1.5-.5-2.5-.5-4.1C15.6 3.9 14.2 2 12 2zm-1.6 4.2c.5 0 .8.6.8 1.3 0 .4-.1.7-.3 1l-.9-.3c.1-.2.1-.4.1-.7 0-.4-.2-.7-.4-.7s-.4.3-.4.7v.2l-.7-.3c0-.7.4-1.2 1.8-1.2zm3.2 0c.8 0 1.2.6 1.2 1.3l-.8.3v-.2c0-.4-.2-.7-.4-.7s-.4.3-.4.7c0 .2 0 .4.1.6l-.8.3c-.2-.3-.3-.6-.3-1 0-.7.5-1.3 1.4-1.3z"/></symbol>
+  <symbol id="ico-gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></symbol>
+</svg>
+
+<header class="cabecera">
+  <div class="ancho cabecera-in">
+    <a class="marca" href="../"><img src="../../assets/bancada.svg" alt="" width="34" height="34"><span>Bancada</span></a>
+    <nav class="menu" aria-label="Bancada">
+      <a href="../#pruebas">Tests</a>
+      <a href="../#capturas">Screenshots</a>
+      <a href="../#como">How to use it</a>
+      <a href="../#ficha">Specs</a>
+      <a href="../#apoyar">Support</a>
+      <a href="./" aria-current="page">Guide</a>
+    </nav>
+    <div class="cabecera-der">
+      <label class="idioma"><span class="sr">Idioma</span>
+        <select id="idioma" aria-label="Idioma / Language"><option value="es">Español</option><option value="en" selected>English</option><option value="pt">Português</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="it">Italiano</option></select>
+      </label>
+      <a class="icono-gh" href="https://github.com/bancada-hw/bancada" aria-label="GitHub"><svg width="22" height="22"><use href="#ico-gh"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main class="ancho guia">
+  <nav class="guia-indice" aria-label="On this page">
+    <p>On this page</p>
+    <ul><li class=""><a href="#before-you-start">Before you start</a></li><li class=""><a href="#the-main-window">The main window</a></li><li class=""><a href="#full-check-up-guided">Full check-up (guided)</a></li><li class=""><a href="#tests-one-by-one">Tests one by one</a></li><li class="sub"><a href="#keyboard">Keyboard</a></li><li class="sub"><a href="#touchpad-and-mouse">Touchpad and mouse</a></li><li class="sub"><a href="#display">Display</a></li><li class="sub"><a href="#sound">Sound</a></li><li class="sub"><a href="#camera">Camera</a></li><li class="sub"><a href="#network">Network</a></li><li class="sub"><a href="#usb-ports">USB ports</a></li><li class="sub"><a href="#battery-and-charger">Battery and charger</a></li><li class="sub"><a href="#drives">Drives</a></li><li class="sub"><a href="#ram">RAM</a></li><li class="sub"><a href="#processor">Processor</a></li><li class="sub"><a href="#graphics">Graphics</a></li><li class="sub"><a href="#sleep">Sleep</a></li><li class="sub"><a href="#motherboard">Motherboard</a></li><li class=""><a href="#the-report">The report</a></li><li class=""><a href="#common-problems">Common problems</a></li></ul>
+  </nav>
+  <article class="guia-texto">
+    <h1>Bancada user guide</h1>
+<h2 id="before-you-start">Before you start</h2>
+<ol><li><strong>Download</strong> the executable for your system from the <a href="https://github.com/bancada-hw/bancada/releases/latest">latest release</a>. You can carry it on a USB stick: nothing is installed and it leaves nothing behind except its settings (language and keyboard).</li><li><strong>Open it</strong> on the computer you're checking.<ul><li>Windows: double-click. The first time you may see <em>"Windows protected your PC"</em>: click <em>More info › Run anyway</em>.</li><li>Linux: <code>chmod +x Bancada-linux-x64 &amp;&amp; ./Bancada-linux-x64</code>.</li></ul></li><li><strong>Have at hand</strong>: the charger (for laptops), a USB stick or mouse for the ports and, to test the headphone jack, some headphones.</li><li><strong>Permissions.</strong> Almost everything works as a normal user. As administrator (Windows) or with <code>sudo</code> (Linux) you also get the serial number, the RAM modules and full SMART data for SATA drives.</li></ol>
+<p>The language is chosen at the bottom of the sidebar (globe icon) and is remembered.</p>
+<h2 id="the-main-window">The main window</h2>
+<p>The list of tests is on the left. The coloured dot next to each one shows its verdict: <strong>Works fine</strong>, <strong>Has issues</strong>, <strong>Doesn't work</strong> or not tested. At the end of each test there's a bar to set the verdict; automatic tests propose one and you can change it.</p>
+<img src="../../capturas/en/inicio.png" alt="Summary" width="1200" height="780" loading="lazy">
+<p><strong>Summary</strong> shows what's in the computer: make, model and serial number, type (laptop, desktop, all-in-one, mini PC), processor, RAM and slots in use, graphics, drives and their health, battery, motherboard and BIOS.</p>
+<h2 id="full-check-up-guided">Full check-up (guided)</h2>
+<img src="../../capturas/en/revision.png" alt="Full check-up" width="1200" height="780" loading="lazy">
+<p>Click <strong>Start the check-up</strong>. Bancada walks you through the tests where you have to do something: keyboard → sound → touchpad → display → camera → USB → battery → sleep. Meanwhile, in the background and one after another, it runs the automatic ones: motherboard → drives → network → memory → processor → each graphics card. The panel at the bottom shows how they're going.</p>
+<ul><li>The stress tests wait until you finish the sound test, so the fan noise doesn't get in the way.</li><li>You can skip a step; anything not tested shows as "Not tested" in the report.</li><li>The last step puts the computer to sleep for a few seconds: <strong>save anything you have open</strong>.</li><li>Allow about 20 minutes. When it's done, click <strong>Finish and view the report</strong>.</li></ul>
+<h2 id="tests-one-by-one">Tests one by one</h2>
+<h3 id="keyboard">Keyboard</h3>
+<img src="../../capturas/en/teclado.png" alt="Keyboard" width="1200" height="780" loading="lazy">
+<p>Press every key once: keys that arrive turn green; any that stay blank don't work or don't send a signal. The layout follows the interface language and the system keyboard; you can pick another from the list (Spanish, Latin American, US, UK, Portugal, Brazil ABNT2, German, French and Italian). Media keys (Fn combinations) show up under "Other keys received". On Windows, Alt Gr also lights up left Ctrl and Print Screen may open the Snipping Tool: that's normal.</p>
+<h3 id="touchpad-and-mouse">Touchpad and mouse</h3>
+<p>Move the pointer over the area until it's filled. If the pointer stops or jumps somewhere, that part of the touchpad is damaged: cover the edges and corners too. Try left, right and middle click, double click, dragging, the wheel or two-finger scrolling, the side buttons, the touchscreen and the pen if there are any.</p>
+<h3 id="display">Display</h3>
+<p><strong>Start display test</strong> fills the screen with solid colours, gradients and a grid. Click, Space or → goes to the next one; ← goes back; Esc exits. Look for dead or stuck pixels, blotches, backlight bleed at the edges, banding in the gradients and uneven brightness.</p>
+<h3 id="sound">Sound</h3>
+<p>Each button plays on one side only; the low-to-high sweep lets you hear rattling, buzzing or crackling. <strong>Listen to the microphone</strong> shows the live level (speak or clap) and <strong>Record 5 seconds and play back</strong> lets you hear what it picked up. Then plug in headphones and repeat to test the jack.</p>
+<h3 id="camera">Camera</h3>
+<p>Turn on each camera and check that the picture is sharp, with normal colours and no dropouts. If it's black, check the privacy shutter or the key that disables it. The picture is never saved and never leaves the computer.</p>
+<h3 id="network">Network</h3>
+<img src="../../capturas/en/red.png" alt="Network" width="1200" height="780" loading="lazy">
+<p>Lists the physical adapters with their link speed, Wi-Fi with nearby networks (signal, channel and band) and Bluetooth. The connection is checked step by step (router → DNS → Internet → secure website) to see where it breaks. <strong>Measure speed</strong> runs 10 s of download and 10 s of upload against Cloudflare's servers. To test the Ethernet port, connect a cable to a router or a switch.</p>
+<h3 id="usb-ports">USB ports</h3>
+<p>Plug a USB stick, a mouse or any device into each port, one at a time: every port that responds is marked with its real speed. If a USB 3 device connects at USB 2 speed, try another cable; if nothing changes, the port's connector may be damaged. A mouse or keyboard always runs at USB 1 or 2 speed.</p>
+<h3 id="battery-and-charger">Battery and charger</h3>
+<p>Shows design and current capacity, health, cycles and live power draw.</p>
+<ul><li><strong>Charger test:</strong> unplug and plug back in following the steps; it checks the charger, the cable and the power connector.</li><li><strong>Discharge test:</strong> with the charger unplugged, it measures how long the battery really lasts. You choose what the computer does (idle with the screen on, browsing, watching video or full load), when to stop (after a time or at a percentage) and the brightness. It detects sudden drops in the percentage (bad cells) and a miscalibrated gauge. Run several with different kinds of use and the report puts them together in a battery-life table.</li></ul>
+<h3 id="drives">Drives</h3>
+<img src="../../capturas/en/discos.png" alt="Drives" width="1200" height="780" loading="lazy">
+<p>SMART health for each drive (temperature, hours, lifespan used, bad sectors), read and write errors logged by the system, and real read, write and random 4 KB speed. The speed test writes a temporary file of up to 1 GB and deletes it afterwards: your files are not touched.</p>
+<h3 id="ram">RAM</h3>
+<p>Fills free memory with 8 patterns and checks that it reads back exactly what was written. A single error means a module is bad; test the modules one at a time to find out which. While the system is running only free memory can be tested: to test all of it, Bancada opens Windows Memory Diagnostic or tells you how to start MemTest86+ on Linux.</p>
+<h3 id="processor">Processor</h3>
+<img src="../../capturas/en/procesador.png" alt="Processor" width="1200" height="780" loading="lazy">
+<p>Live temperature, frequency and usage. The stress test uses every thread and watches whether it gets too hot, slows down because of heat or gets any calculation wrong. 5 minutes is enough to see whether the cooling copes; plug in the charger if it's a laptop.</p>
+<h3 id="graphics">Graphics</h3>
+<img src="../../capturas/en/grafica.png" alt="Graphics" width="1200" height="780" loading="lazy">
+<p>Pick the graphics card by name (dedicated, integrated or any other) and push it to the limit: temperature and performance are monitored and its calculations are checked. <strong>Check the video memory</strong> looks for VRAM faults, the kind that cause lines and coloured dots. It uses OpenCL, which comes with the NVIDIA, AMD and Intel drivers; on Linux you may need to install your card's OpenCL package.</p>
+<h3 id="sleep">Sleep</h3>
+<p>Puts the computer to sleep and checks that it comes back properly: how long it slept, whether the network recovers and whether any device stopped working. On computers with modern standby, wake it yourself with a key as the customer would. If it doesn't come back and has to be forced off, Bancada marks it as a failure the next time it opens.</p>
+<h3 id="motherboard">Motherboard</h3>
+<img src="../../capturas/en/placa.png" alt="Motherboard" width="1200" height="780" loading="lazy">
+<p>Automatic checks: firmware and Secure Boot, TPM chip, faulty devices or devices without a driver, PCI Express links with fewer lanes than they should have, logged hardware errors, the motherboard clock (CMOS battery) and correct calculation on every core.</p>
+<h2 id="the-report">The report</h2>
+<img src="../../capturas/en/informe.png" alt="Report" width="1200" height="780" loading="lazy">
+<p>Brings every test together with its measurements, notes and verdicts. Add your own notes (physical condition, dents, what the customer said…) and click <strong>Save report as PDF</strong>: it's saved to your Documents folder and includes the computer's serial number.</p>
+<h2 id="common-problems">Common problems</h2>
+<table><thead><tr><th>What happens</th><th>What to do</th></tr></thead><tbody><tr><td>Windows warns that the program isn't safe</td><td>The executable isn't signed yet: <em>More info › Run anyway</em>.</td></tr><tr><td>No processor temperature on Windows</td><td>Some computers only report it to programs with their own driver. The stress test still detects performance loss and errors.</td></tr><tr><td>"No OpenCL driver is installed" in Graphics</td><td>Install or update the driver from the NVIDIA, AMD or Intel website. On Linux: <code>intel-opencl-icd</code>, <code>mesa-opencl-icd</code> or ROCm.</td></tr><tr><td>No Wi-Fi networks on Windows</td><td>Turn on <em>Settings › Privacy &amp; security › Location › Let desktop apps access your location</em>.</td></tr><tr><td>No SMART data on Linux</td><td>Install <code>smartmontools</code> and run Bancada with <code>sudo</code>.</td></tr><tr><td>It won't start on Linux and asks for libICE or libSM</td><td>Install <code>libice6</code> and <code>libsm6</code> (the X11 interface needs them).</td></tr></tbody></table>
+    <div class="guia-acciones">
+      <a class="boton linea" href="../">← Back to the website</a>
+      <a class="boton linea" href="https://github.com/bancada-hw/bancada/blob/main/docs/guia/en.md"><svg width="18" height="18"><use href="#ico-gh"/></svg>View on GitHub</a>
+    </div>
+  </article>
+</main>
+
+<footer class="pie">
+  <div class="ancho pie-in">
+    <div class="marca"><img src="../../assets/bancada.svg" alt="" width="28" height="28"><span>Bancada</span></div>
+    <p>Free and open source hardware diagnostics. © 2026 Bill Bull · <a href="https://github.com/bancada-hw/bancada/blob/main/LICENSE">GPL-3.0 licence</a> · <a href="https://github.com/bancada-hw/bancada/blob/main/AVISO.md">Additional terms</a><br>This site uses no cookies or trackers.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var sel = document.getElementById('idioma');
+  sel.addEventListener('change', function () { location.href = '../../' + sel.value + '/guia/' + location.hash; });
+})();
+</script>
+</body>
+</html>

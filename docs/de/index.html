@@ -35,10 +35,10 @@
     <nav class="menu" aria-label="Bancada">
       <a href="#pruebas">Tests</a>
       <a href="#capturas">Bildschirmfotos</a>
-      <a href="#como">So geht's</a>
+      <a href="#como">Bedienung</a>
       <a href="#ficha">Datenblatt</a>
       <a href="#apoyar">Unterstützen</a>
-      <a href="https://github.com/bancada-hw/bancada/blob/main/docs/guia/de.md">Anleitung</a>
+      <a href="guia/">Anleitung</a>
     </nav>
     <div class="cabecera-der">
       <label class="idioma"><span class="sr">Idioma</span>
@@ -73,6 +73,7 @@
         <a class="boton mascara" data-so="linux" href="https://github.com/bancada-hw/bancada/releases/latest/download/Bancada-linux-x64"><svg width="18" height="18"><use href="#ico-linux"/></svg>Für Linux herunterladen</a>
         <a class="boton linea" href="https://github.com/bancada-hw/bancada"><svg width="18" height="18"><use href="#ico-gh"/></svg>Code auf GitHub</a>
       </div>
+      <p class="enlace-guia"><a href="#como">Zum ersten Mal hier? So funktioniert es →</a></p>
       <p class="nota">Eine einzige Datei, etwa 60 MB · ohne Installation · Windows 10/11 und Linux x64<br><code>Unter Linux: chmod +x Bancada-linux-x64</code></p>
     </div>
     <figure class="monitor">
@@ -92,10 +93,10 @@
   <div class="ancho">
     <p class="serigrafia">J1 · Tests</p>
     <h2>Alles, was kaputtgehen kann, geprüft</h2>
-    <p class="entradilla">Jeder Test endet mit einem Urteil: funktioniert, mit Mängeln oder funktioniert nicht. Automatische Tests schlagen eins vor, Sie entscheiden.</p>
+    <p class="entradilla">Jeder Test endet mit einem Urteil: funktioniert einwandfrei, hat Probleme oder funktioniert nicht. Automatische Tests schlagen eins vor, Sie entscheiden.</p>
     <ul class="rejilla">
       <li class="pieza"><span class="ref">U01</span><h3>Übersicht</h3><p>Hersteller, Modell und Seriennummer, Prozessor, RAM pro Steckplatz, Grafikkarten, Laufwerke, Akku, Mainboard und BIOS.</p></li>
-      <li class="pieza destacada"><span class="ref">U02</span><h3>Komplettprüfung</h3><p>Führt Sie durch die manuellen Tests und erledigt die automatischen nebenbei. Etwa 20 Minuten.</p></li>
+      <li class="pieza destacada"><span class="ref">U02</span><h3>Gesamtprüfung</h3><p>Führt Sie durch die manuellen Tests und erledigt die automatischen nebenbei. Etwa 20 Minuten.</p></li>
       <li class="pieza"><span class="ref">U03</span><h3>Tastatur</h3><p>Tastatur in ihrer echten Form (ISO, ANSI, ABNT2). Jede ankommende Taste leuchtet auf.</p></li>
       <li class="pieza"><span class="ref">U04</span><h3>Touchpad und Maus</h3><p>Fläche, die sich beim Überfahren färbt, Tasten, Gesten, Mausrad, Touchscreen und Stift.</p></li>
       <li class="pieza"><span class="ref">U05</span><h3>Bildschirm</h3><p>Farben, Verläufe und Raster im Vollbild für Pixelfehler und Lichthöfe.</p></li>
@@ -140,13 +141,27 @@
 
 <section id="como" class="seccion">
   <div class="ancho">
-    <p class="serigrafia">J4 · So geht's</p>
-    <h2>Drei Schritte, zwanzig Minuten</h2>
-    <ol class="pasos">
-      <li><span class="num">01</span><h3>Starten</h3><p>Vom USB-Stick oder als Download. Keine Installation, kein Konto, keine Spuren.</p></li>
-      <li><span class="num">02</span><h3>Der geführten Prüfung folgen</h3><p>Sie drücken Tasten, schauen und hören. Währenddessen testet Bancada Laufwerke, Netzwerk, Speicher, Prozessor und Grafikkarte im Hintergrund.</p></li>
-      <li><span class="num">03</span><h3>Bericht übergeben</h3><p>Ein PDF mit jedem Messwert und jedem Urteil, Ihren Notizen und der Seriennummer des Geräts.</p></li>
-    </ol>
+    <p class="serigrafia">J4 · Bedienung</p>
+    <h2>Zwei Arten, es zu nutzen</h2>
+    <p class="entradilla">Prüfen Sie das ganze Gerät mit der Schritt-für-Schritt-Anleitung oder gehen Sie direkt zum Teil, das Sie interessiert. Beides lässt sich mischen: Was Sie selbst testen, kommt ebenfalls in den Bericht.</p>
+    <div class="modos">
+      <article class="modo destacado">
+        <p class="modo-tag">Ganzes Gerät · etwa 20 Min.</p>
+        <h3>Geführte Prüfung</h3>
+        <p>Um ein Gerät von oben bis unten zu prüfen, bevor Sie es verkaufen, zurückgeben oder kaufen.</p>
+        <ol><li>Öffnen Sie in der Seitenleiste <b>Gesamtprüfung</b> und klicken Sie auf <b>Gesamtprüfung starten</b>.</li><li>Tun Sie, was jeder Schritt verlangt: Tasten drücken, auf den Bildschirm schauen, zuhören, ein USB-Gerät anschließen… Währenddessen werden Laufwerke, Netzwerk, Speicher, Prozessor und Grafikkarte von selbst getestet.</li><li>Schritte, die Sie nicht brauchen, überspringen Sie. Am Ende klicken Sie auf <b>Abschließen und Bericht ansehen</b>.</li></ol>
+      </article>
+      <article class="modo">
+        <p class="modo-tag">Ein Teil · in Ihrem Tempo</p>
+        <h3>Test für Test</h3>
+        <p>Um etwas Bestimmtes zu prüfen: eine defekte Tastatur, einen verdächtigen Akku, ein lautes Laufwerk.</p>
+        <ol><li>Wählen Sie den Test in der Seitenleiste, zum Beispiel <b>Tastatur</b> oder <b>Akku</b>.</li><li>Folgen Sie den Hinweisen auf dem Bildschirm. Automatische Tests schlagen ein Urteil vor.</li><li>Unten markieren Sie <b>Funktioniert einwandfrei</b>, <b>Hat Probleme</b> oder <b>Funktioniert nicht</b>. Der Punkt in der Seitenleiste ändert die Farbe.</li></ol>
+      </article>
+    </div>
+    <div class="modo-pie">
+      <p>In beiden Fällen fasst der Bericht alles Getestete zusammen: Notizen ergänzen und auf <b>Bericht als PDF speichern</b> klicken.</p>
+      <a class="boton cobre" href="guia/">Vollständige Anleitung →</a>
+    </div>
   </div>
 </section>
 
@@ -155,7 +170,7 @@
     <div>
       <p class="serigrafia">J5 · Datenblatt</p>
       <h2>Datenblatt</h2>
-      <p class="entradilla">Von Technikern für Techniker. Keine Web-Schichten, nichts zusätzlich zu installieren.</p>
+      <p class="entradilla">Von Technikern für Techniker. Eine Datei, nichts zu installieren.</p>
       <div class="privacidad">
         <h3>Ihre Geräte und die Ihrer Kunden bleiben auf der Werkbank</h3>
         <p>Bancada sammelt und sendet keine Daten. Kamera und Mikrofon werden nie aufgezeichnet, und der Bericht bleibt in Ihrem Ordner Dokumente. Ins Internet geht es nur, um:</p>
@@ -165,7 +180,7 @@
     <dl class="hoja">
       <div><dt>Plattformen</dt><dd>Windows 10/11 x64 · Linux x64</dd></div>
       <div><dt>Format</dt><dd>Eine eigenständige ausführbare Datei, etwa 60 MB</dd></div>
-      <div><dt>Oberfläche</dt><dd>Nativ mit Avalonia 12 auf .NET 10 (ohne Electron)</dd></div>
+      <div><dt>Oberfläche</dt><dd>Nativ, im Look des jeweiligen Systems (Avalonia 12 auf .NET 10)</dd></div>
       <div><dt>Rechte</dt><dd>Normaler Benutzer; als Administrator oder mit sudo zusätzlich RAM-Module, Seriennummer und SATA-SMART</dd></div>
       <div><dt>Sprachen</dt><dd>Español, English, Português, Français, Deutsch, Italiano</dd></div>
       <div><dt>Bericht</dt><dd>PDF in A4 in der gewählten Sprache</dd></div>

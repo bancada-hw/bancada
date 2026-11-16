@@ -21,6 +21,130 @@ VERSION = "0.2"
 URL = "https://bancada-hw.github.io/bancada"
 
 
+# --- Guía de uso: de docs/guia/<idioma>.md a HTML (solo lo que usa la guía) ---
+REPO = "https://github.com/bancada-hw/bancada/blob/main/"
+
+
+def escapar(t):
+    return t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def enlace(url, idiomas):
+    if re.match(r"^[a-z]+://|^#|^mailto:", url):
+        return url
+    m = re.match(r"^([a-z]{2})\.md(#.*)?$", url)
+    if m and m.group(1) in idiomas:
+        return f"../../{m.group(1)}/guia/" + (m.group(2) or "")
+    if url.startswith("../capturas/"):
+        return "../../capturas/" + url[len("../capturas/"):]
+    limpio = url
+    while limpio.startswith("../"):
+        limpio = limpio[3:]
+    return REPO + ("docs/" + limpio if not url.startswith("../../") else limpio)
+
+
+def en_linea(t, idiomas):
+    codigos = []
+    t = re.sub(r"`([^`]+)`", lambda m: codigos.append(m.group(1)) or f"\x00{len(codigos) - 1}\x00", t)
+    t = escapar(t)
+    t = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)",
+               lambda m: f'<img src="{enlace(m.group(2), idiomas)}" alt="{m.group(1)}" width="1200" height="780" loading="lazy">', t)
+    t = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", lambda m: f'<a href="{enlace(m.group(2), idiomas)}">{m.group(1)}</a>', t)
+    t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
+    t = re.sub(r"(?<![\w*])\*(?!\s)(.+?)(?<!\s)\*(?![\w*])", r"<em>\1</em>", t)
+    t = re.sub(r"<(https?://[^>\s]+)>", r'<a href="\1">\1</a>', t)
+    t = t.replace("&lt;https://", "<https://")
+    t = re.sub(r"&lt;(https?://[^&\s]+)&gt;", r'<a href="\1">\1</a>', t)
+    return re.sub(r"\x00(\d+)\x00", lambda m: f"<code>{escapar(codigos[int(m.group(1))])}</code>", t)
+
+
+def ancla(texto, usadas):
+    a = re.sub(r"[^\w\s-]", "", texto.lower()).strip()
+    a = re.sub(r"\s+", "-", a) or "seccion"
+    base, n = a, 2
+    while a in usadas:
+        a, n = f"{base}-{n}", n + 1
+    usadas.add(a)
+    return a
+
+
+def guia_html(md, idiomas):
+    lineas = md.splitlines()
+    html, indice, usadas = [], [], set()
+    i = 0
+    while i < len(lineas):
+        l = lineas[i]
+        if not l.strip():
+            i += 1
+            continue
+        # barra de idiomas y enlace de vuelta del Markdown: en la web sobran
+        if re.search(r"\]\([a-z]{2}\.md\)", l) and "·" in l or l.startswith("←"):
+            i += 1
+            continue
+        m = re.match(r"^(#{1,3})\s+(.*)$", l)
+        if m:
+            n, texto = len(m.group(1)), m.group(2).strip()
+            if n == 1:
+                html.append(f"<h1>{en_linea(texto, idiomas)}</h1>")
+            else:
+                a = ancla(texto, usadas)
+                html.append(f'<h{n} id="{a}">{en_linea(texto, idiomas)}</h{n}>')
+                indice.append((n, a, re.sub(r"<[^>]+>", "", en_linea(texto, idiomas))))
+            i += 1
+            continue
+        if l.startswith("|"):
+            filas = []
+            while i < len(lineas) and lineas[i].startswith("|"):
+                filas.append([c.strip() for c in lineas[i].strip().strip("|").split("|")])
+                i += 1
+            cab, cuerpo = filas[0], [f for f in filas[1:] if not all(re.match(r"^:?-+:?$", c) for c in f)]
+            html.append("<table><thead><tr>" + "".join(f"<th>{en_linea(c, idiomas)}</th>" for c in cab) +
+                        "</tr></thead><tbody>" + "".join("<tr>" + "".join(f"<td>{en_linea(c, idiomas)}</td>" for c in f) + "</tr>" for f in cuerpo) +
+                        "</tbody></table>")
+            continue
+        if re.match(r"^(\s*)([-*]|\d+\.)\s", l):
+            html.append(lista(lineas, i, idiomas))
+            i = lista.fin
+            continue
+        if re.match(r"^!\[[^\]]*\]\([^)]+\)\s*$", l):
+            html.append(en_linea(l.strip(), idiomas))
+            i += 1
+            continue
+        parrafo = []
+        while i < len(lineas) and lineas[i].strip() and not re.match(r"^(#|\||\s*([-*]|\d+\.)\s|!\[)", lineas[i]):
+            parrafo.append(lineas[i].strip())
+            i += 1
+        html.append(f"<p>{en_linea(' '.join(parrafo), idiomas)}</p>")
+    ind = "<ul>" + "".join(f'<li class="{"sub" if n == 3 else ""}"><a href="#{a}">{t}</a></li>' for n, a, t in indice) + "</ul>"
+    return "\n".join(html), ind
+
+
+def lista(lineas, i, idiomas):
+    sangria = len(lineas[i]) - len(lineas[i].lstrip())
+    ordenada = bool(re.match(r"^\s*\d+\.", lineas[i]))
+    items = []
+    while i < len(lineas):
+        l = lineas[i]
+        if not l.strip():
+            break
+        s = len(l) - len(l.lstrip())
+        m = re.match(r"^\s*([-*]|\d+\.)\s+(.*)$", l)
+        if m and s == sangria:
+            items.append([m.group(2).strip(), ""])
+            i += 1
+        elif m and s > sangria:
+            items[-1][1] += lista(lineas, i, idiomas)
+            i = lista.fin
+        elif s > sangria and items:
+            items[-1][0] += " " + l.strip()
+            i += 1
+        else:
+            break
+    lista.fin = i
+    etiqueta = "ol" if ordenada else "ul"
+    return f"<{etiqueta}>" + "".join(f"<li>{en_linea(t, idiomas)}{sub}</li>" for t, sub in items) + f"</{etiqueta}>"
+
+
 def main():
     plantilla = (WEB / "plantilla.html").read_text(encoding="utf-8")
     config = json.loads((WEB / "config.json").read_text(encoding="utf-8"))
@@ -45,6 +169,9 @@ def main():
     alternativas = "\n".join(f'<link rel="alternate" hreflang="{l}" href="{URL}/{l}/">' for l in idiomas)
     alternativas += f'\n<link rel="alternate" hreflang="x-default" href="{URL}/">'
 
+    plantilla_guia = (WEB / "plantilla-guia.html").read_text(encoding="utf-8")
+    alternativas_guia = "\n".join(f'<link rel="alternate" hreflang="{l}" href="{URL}/{l}/guia/">' for l in idiomas)
+
     for l in idiomas:
         t = dict(textos[l])
         t["alternativas"] = alternativas
@@ -57,6 +184,17 @@ def main():
         destino.parent.mkdir(exist_ok=True)
         destino.write_text(html, encoding="utf-8")
         print(f"docs/{l}/index.html")
+
+        md = DOCS / "guia" / f"{l}.md"
+        if md.exists():
+            contenido, indice = guia_html(md.read_text(encoding="utf-8"), idiomas)
+            t["contenido"], t["indice"] = contenido, indice
+            t["alternativas_guia"] = alternativas_guia
+            html = re.sub(r"{{(\w+)}}", lambda m: t[m.group(1)], plantilla_guia)
+            destino = DOCS / l / "guia" / "index.html"
+            destino.parent.mkdir(exist_ok=True)
+            destino.write_text(html, encoding="utf-8")
+            print(f"docs/{l}/guia/index.html")
 
     lista = json.dumps(idiomas)
     (DOCS / "index.html").write_text(f"""<!doctype html>

@@ -28,7 +28,7 @@ Il **Riepilogo** mostra cosa c'è nel computer: marca, modello e numero di serie
 all-in-one, mini PC), processore, RAM e slot occupati, schede grafiche, unità e la loro salute, batteria,
 scheda madre e BIOS.
 
-## Controllo completo (consigliato)
+## Controllo completo (guidato)
 
 ![Controllo completo](../capturas/it/revision.png)
 

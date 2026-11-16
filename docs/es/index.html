@@ -35,10 +35,10 @@
     <nav class="menu" aria-label="Bancada">
       <a href="#pruebas">Pruebas</a>
       <a href="#capturas">Capturas</a>
-      <a href="#como">Cómo funciona</a>
+      <a href="#como">Cómo usarlo</a>
       <a href="#ficha">Ficha técnica</a>
       <a href="#apoyar">Apoyar</a>
-      <a href="https://github.com/bancada-hw/bancada/blob/main/docs/guia/es.md">Guía</a>
+      <a href="guia/">Guía</a>
     </nav>
     <div class="cabecera-der">
       <label class="idioma"><span class="sr">Idioma</span>
@@ -73,6 +73,7 @@
         <a class="boton mascara" data-so="linux" href="https://github.com/bancada-hw/bancada/releases/latest/download/Bancada-linux-x64"><svg width="18" height="18"><use href="#ico-linux"/></svg>Descargar para Linux</a>
         <a class="boton linea" href="https://github.com/bancada-hw/bancada"><svg width="18" height="18"><use href="#ico-gh"/></svg>Código en GitHub</a>
       </div>
+      <p class="enlace-guia"><a href="#como">¿Primera vez? Mira cómo se usa →</a></p>
       <p class="nota">Un solo archivo de unos 60 MB · sin instalar · Windows 10/11 y Linux x64<br><code>En Linux: chmod +x Bancada-linux-x64</code></p>
     </div>
     <figure class="monitor">
@@ -140,13 +141,27 @@
 
 <section id="como" class="seccion">
   <div class="ancho">
-    <p class="serigrafia">J4 · Cómo funciona</p>
-    <h2>Tres pasos, veinte minutos</h2>
-    <ol class="pasos">
-      <li><span class="num">01</span><h3>Ábrelo</h3><p>Desde un pendrive o una descarga. No se instala, no pide cuenta y no deja rastro.</p></li>
-      <li><span class="num">02</span><h3>Sigue la revisión guiada</h3><p>Tú pulsas teclas, miras y escuchas. Mientras, Bancada prueba discos, red, memoria, procesador y gráfica en segundo plano.</p></li>
-      <li><span class="num">03</span><h3>Entrega el informe</h3><p>Un PDF con cada medida y cada veredicto, con tus notas y el número de serie del equipo.</p></li>
-    </ol>
+    <p class="serigrafia">J4 · Cómo usarlo</p>
+    <h2>Dos formas de usarlo</h2>
+    <p class="entradilla">Revisa el equipo entero con la guía paso a paso o ve directo a la pieza que te interesa. Puedes mezclar las dos: lo que pruebes por tu cuenta también cuenta para el informe.</p>
+    <div class="modos">
+      <article class="modo destacado">
+        <p class="modo-tag">Equipo entero · unos 20 min</p>
+        <h3>Revisión guiada</h3>
+        <p>Para revisar un equipo de arriba abajo antes de venderlo, entregarlo o comprarlo.</p>
+        <ol><li>En la barra lateral, abre <b>Revisión completa</b> y pulsa <b>Empezar la revisión</b>.</li><li>Haz lo que pide cada paso: pulsar teclas, mirar la pantalla, escuchar, conectar un USB… Mientras, discos, red, memoria, procesador y gráfica se prueban solos.</li><li>Si un paso no te interesa, sáltalo. Al acabar, pulsa <b>Terminar y ver el informe</b>.</li></ol>
+      </article>
+      <article class="modo">
+        <p class="modo-tag">Una pieza · a tu ritmo</p>
+        <h3>Prueba a prueba</h3>
+        <p>Para comprobar algo concreto: un teclado que falla, una batería sospechosa, un disco que hace ruido.</p>
+        <ol><li>Elige la prueba en la barra lateral, por ejemplo <b>Teclado</b> o <b>Batería</b>.</li><li>Sigue lo que pone en pantalla. Las pruebas automáticas te proponen un veredicto.</li><li>Abajo, marca <b>Funciona bien</b>, <b>Con defectos</b> o <b>No funciona</b>. El punto de la barra lateral cambia de color.</li></ol>
+      </article>
+    </div>
+    <div class="modo-pie">
+      <p>En los dos casos, el informe junta todo lo probado: añade tus notas y pulsa <b>Guardar informe en PDF</b>.</p>
+      <a class="boton cobre" href="guia/">Guía de uso completa →</a>
+    </div>
   </div>
 </section>
 
@@ -155,7 +170,7 @@
     <div>
       <p class="serigrafia">J5 · Ficha técnica</p>
       <h2>Ficha técnica</h2>
-      <p class="entradilla">Hecho por y para técnicos. Sin capas web, sin dependencias que instalar.</p>
+      <p class="entradilla">Hecho por y para técnicos. Un solo archivo, nada que instalar.</p>
       <div class="privacidad">
         <h3>Tu equipo y el de tus clientes no salen de la mesa</h3>
         <p>Bancada no recoge ni envía datos. La cámara y el micrófono no se guardan, y el informe se queda en tu carpeta Documentos. Solo sale a Internet para:</p>
@@ -165,7 +180,7 @@
     <dl class="hoja">
       <div><dt>Plataformas</dt><dd>Windows 10/11 x64 · Linux x64</dd></div>
       <div><dt>Formato</dt><dd>Un ejecutable autocontenido de unos 60 MB</dd></div>
-      <div><dt>Interfaz</dt><dd>Nativa con Avalonia 12 sobre .NET 10 (sin Electron)</dd></div>
+      <div><dt>Interfaz</dt><dd>Nativa, con el aspecto de cada sistema (Avalonia 12 sobre .NET 10)</dd></div>
       <div><dt>Permisos</dt><dd>Usuario normal; como administrador o sudo, además módulos RAM, serie y SMART SATA</dd></div>
       <div><dt>Idiomas</dt><dd>Español, English, Português, Français, Deutsch, Italiano</dd></div>
       <div><dt>Informe</dt><dd>PDF A4 en el idioma elegido</dd></div>

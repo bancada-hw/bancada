@@ -35,10 +35,10 @@
     <nav class="menu" aria-label="Bancada">
       <a href="#pruebas">Tests</a>
       <a href="#capturas">Screenshots</a>
-      <a href="#como">How it works</a>
+      <a href="#como">How to use it</a>
       <a href="#ficha">Specs</a>
       <a href="#apoyar">Support</a>
-      <a href="https://github.com/bancada-hw/bancada/blob/main/docs/guia/en.md">Guide</a>
+      <a href="guia/">Guide</a>
     </nav>
     <div class="cabecera-der">
       <label class="idioma"><span class="sr">Idioma</span>
@@ -73,6 +73,7 @@
         <a class="boton mascara" data-so="linux" href="https://github.com/bancada-hw/bancada/releases/latest/download/Bancada-linux-x64"><svg width="18" height="18"><use href="#ico-linux"/></svg>Download for Linux</a>
         <a class="boton linea" href="https://github.com/bancada-hw/bancada"><svg width="18" height="18"><use href="#ico-gh"/></svg>Code on GitHub</a>
       </div>
+      <p class="enlace-guia"><a href="#como">First time? See how it works →</a></p>
       <p class="nota">A single file of about 60 MB · no install · Windows 10/11 and Linux x64<br><code>On Linux: chmod +x Bancada-linux-x64</code></p>
     </div>
     <figure class="monitor">
@@ -92,10 +93,10 @@
   <div class="ancho">
     <p class="serigrafia">J1 · Tests</p>
     <h2>Everything that can break, checked</h2>
-    <p class="entradilla">Every test ends with a verdict: works, has defects or does not work. Automatic tests suggest one and you decide.</p>
+    <p class="entradilla">Every test ends with a verdict: works fine, has issues or doesn't work. Automatic tests suggest one and you decide.</p>
     <ul class="rejilla">
       <li class="pieza"><span class="ref">U01</span><h3>Summary</h3><p>Make, model and serial, CPU, RAM per slot, GPUs, drives, battery, motherboard and BIOS.</p></li>
-      <li class="pieza destacada"><span class="ref">U02</span><h3>Full check</h3><p>Walks you through the hands-on tests while it runs the automatic ones by itself. About 20 minutes.</p></li>
+      <li class="pieza destacada"><span class="ref">U02</span><h3>Full check-up</h3><p>Walks you through the hands-on tests while it runs the automatic ones by itself. About 20 minutes.</p></li>
       <li class="pieza"><span class="ref">U03</span><h3>Keyboard</h3><p>Keyboard drawn with its real shape (ISO, ANSI, ABNT2). Every key that arrives lights up.</p></li>
       <li class="pieza"><span class="ref">U04</span><h3>Touchpad and mouse</h3><p>An area that fills in as you move, buttons, gestures, wheel, touchscreen and pen.</p></li>
       <li class="pieza"><span class="ref">U05</span><h3>Display</h3><p>Full-screen colours, gradients and grid to spot dead pixels and backlight bleed.</p></li>
@@ -122,7 +123,7 @@
     <p class="entradilla">A native interface with the look of a circuit board: green solder mask, copper traces and silkscreen.</p>
     <div class="pestanas" role="tablist">
       <button role="tab" aria-selected="true" data-vista="inicio">Summary</button>
-      <button role="tab" aria-selected="false" data-vista="revision">Full check</button>
+      <button role="tab" aria-selected="false" data-vista="revision">Check-up</button>
       <button role="tab" aria-selected="false" data-vista="teclado">Keyboard</button>
       <button role="tab" aria-selected="false" data-vista="red">Network</button>
       <button role="tab" aria-selected="false" data-vista="discos">Drives</button>
@@ -140,13 +141,27 @@
 
 <section id="como" class="seccion">
   <div class="ancho">
-    <p class="serigrafia">J4 · How it works</p>
-    <h2>Three steps, twenty minutes</h2>
-    <ol class="pasos">
-      <li><span class="num">01</span><h3>Open it</h3><p>From a USB stick or a download. No install, no account, no trace left behind.</p></li>
-      <li><span class="num">02</span><h3>Follow the guided check</h3><p>You press keys, look and listen. Meanwhile, Bancada tests drives, network, memory, CPU and GPU in the background.</p></li>
-      <li><span class="num">03</span><h3>Hand over the report</h3><p>A PDF with every measurement and verdict, your notes and the machine's serial number.</p></li>
-    </ol>
+    <p class="serigrafia">J4 · How to use it</p>
+    <h2>Two ways to use it</h2>
+    <p class="entradilla">Check the whole machine with the step-by-step guide, or go straight to the part you care about. You can mix both: whatever you test on your own also goes into the report.</p>
+    <div class="modos">
+      <article class="modo destacado">
+        <p class="modo-tag">Whole machine · about 20 min</p>
+        <h3>Guided check-up</h3>
+        <p>To check a machine from top to bottom before selling, returning or buying it.</p>
+        <ol><li>In the sidebar, open <b>Full check-up</b> and press <b>Start the check-up</b>.</li><li>Do what each step asks: press keys, look at the screen, listen, plug in a USB device… Meanwhile, drives, network, memory, CPU and GPU are tested on their own.</li><li>Skip any step you don't need. When you are done, press <b>Finish and view the report</b>.</li></ol>
+      </article>
+      <article class="modo">
+        <p class="modo-tag">One part · at your pace</p>
+        <h3>Test by test</h3>
+        <p>To check something specific: a faulty keyboard, a suspicious battery, a noisy drive.</p>
+        <ol><li>Pick the test in the sidebar, for example <b>Keyboard</b> or <b>Battery</b>.</li><li>Follow the on-screen instructions. Automatic tests suggest a verdict.</li><li>At the bottom, mark <b>Works fine</b>, <b>Has issues</b> or <b>Doesn't work</b>. The dot in the sidebar changes colour.</li></ol>
+      </article>
+    </div>
+    <div class="modo-pie">
+      <p>Either way, the report gathers everything you tested: add your notes and press <b>Save report as PDF</b>.</p>
+      <a class="boton cobre" href="guia/">Full user guide →</a>
+    </div>
   </div>
 </section>
 
@@ -155,7 +170,7 @@
     <div>
       <p class="serigrafia">J5 · Specs</p>
       <h2>Specs</h2>
-      <p class="entradilla">Made by technicians, for technicians. No web layers, nothing else to install.</p>
+      <p class="entradilla">Made by technicians, for technicians. One file, nothing to install.</p>
       <div class="privacidad">
         <h3>Your machines and your customers' stay on the bench</h3>
         <p>Bancada collects and sends no data. Camera and microphone are never recorded, and the report stays in your Documents folder. It only goes online to:</p>
@@ -165,7 +180,7 @@
     <dl class="hoja">
       <div><dt>Platforms</dt><dd>Windows 10/11 x64 · Linux x64</dd></div>
       <div><dt>Format</dt><dd>One self-contained executable of about 60 MB</dd></div>
-      <div><dt>Interface</dt><dd>Native, Avalonia 12 on .NET 10 (no Electron)</dd></div>
+      <div><dt>Interface</dt><dd>Native, with each system's look and feel (Avalonia 12 on .NET 10)</dd></div>
       <div><dt>Permissions</dt><dd>Regular user; as administrator or with sudo, also RAM modules, serial and SATA SMART</dd></div>
       <div><dt>Languages</dt><dd>Español, English, Português, Français, Deutsch, Italiano</dd></div>
       <div><dt>Report</dt><dd>A4 PDF in the chosen language</dd></div>
