@@ -127,5 +127,6 @@
   "guia_volver": "Torna al sito",
   "guia_github": "Vedi su GitHub",
   "pie_firma": "Politica di firma del codice",
-  "firma_titulo": "Politica di firma del codice"
+  "firma_titulo": "Politica di firma del codice",
+  "hero_firma": "Firma del codice gratuita per Windows offerta da <a href=\"https://about.signpath.io\">SignPath.io</a>, certificato di <a href=\"https://signpath.org\">SignPath Foundation</a>"
 }

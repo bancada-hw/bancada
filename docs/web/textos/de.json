@@ -127,5 +127,6 @@
   "guia_volver": "Zurück zur Website",
   "guia_github": "Auf GitHub ansehen",
   "pie_firma": "Richtlinie zur Codesignierung",
-  "firma_titulo": "Richtlinie zur Codesignierung"
+  "firma_titulo": "Richtlinie zur Codesignierung",
+  "hero_firma": "Kostenlose Codesignierung für Windows von <a href=\"https://about.signpath.io\">SignPath.io</a>, Zertifikat von der <a href=\"https://signpath.org\">SignPath Foundation</a>"
 }
