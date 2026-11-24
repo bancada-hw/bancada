@@ -153,6 +153,7 @@ def main():
     idiomas = [l for l in ORDEN if l in textos] + sorted(set(textos) - set(ORDEN))
 
     claves = set(re.findall(r"{{(\w+)}}", plantilla)) - {"alternativas", "opciones_idioma", "version", "donar"}
+    claves |= {"guia_titulo", "firma_titulo", "pie_firma"}
     error = False
     for l in idiomas:
         falta = claves - set(textos[l])
@@ -169,8 +170,11 @@ def main():
     alternativas = "\n".join(f'<link rel="alternate" hreflang="{l}" href="{URL}/{l}/">' for l in idiomas)
     alternativas += f'\n<link rel="alternate" hreflang="x-default" href="{URL}/">'
 
-    plantilla_guia = (WEB / "plantilla-guia.html").read_text(encoding="utf-8")
-    alternativas_guia = "\n".join(f'<link rel="alternate" hreflang="{l}" href="{URL}/{l}/guia/">' for l in idiomas)
+    plantilla_pagina = (WEB / "plantilla-guia.html").read_text(encoding="utf-8")
+    # Páginas de texto sacadas de docs/<pagina>/<idioma>.md: la guía de uso y la política de firma de código.
+    paginas = {"guia": "guia_titulo", "firma": "firma_titulo"}
+    alternativas_pagina = {p: "\n".join(f'<link rel="alternate" hreflang="{l}" href="{URL}/{l}/{p}/">' for l in idiomas)
+                           for p in paginas}
 
     for l in idiomas:
         t = dict(textos[l])
@@ -185,16 +189,22 @@ def main():
         destino.write_text(html, encoding="utf-8")
         print(f"docs/{l}/index.html")
 
-        md = DOCS / "guia" / f"{l}.md"
-        if md.exists():
+        for pagina, clave_titulo in paginas.items():
+            md = DOCS / pagina / f"{l}.md"
+            if not md.exists():
+                continue
             contenido, indice = guia_html(md.read_text(encoding="utf-8"), idiomas)
             t["contenido"], t["indice"] = contenido, indice
-            t["alternativas_guia"] = alternativas_guia
-            html = re.sub(r"{{(\w+)}}", lambda m: t[m.group(1)], plantilla_guia)
-            destino = DOCS / l / "guia" / "index.html"
+            t["pagina"] = pagina
+            t["pagina_titulo"] = t[clave_titulo]
+            t["pagina_github_url"] = f"{REPO}docs/{pagina}/{l}.md"
+            t["alternativas_pagina"] = alternativas_pagina[pagina]
+            t["actual_guia"] = ' aria-current="page"' if pagina == "guia" else ""
+            html = re.sub(r"{{(\w+)}}", lambda m: t[m.group(1)], plantilla_pagina)
+            destino = DOCS / l / pagina / "index.html"
             destino.parent.mkdir(exist_ok=True)
             destino.write_text(html, encoding="utf-8")
-            print(f"docs/{l}/guia/index.html")
+            print(f"docs/{l}/{pagina}/index.html")
 
     lista = json.dumps(idiomas)
     (DOCS / "index.html").write_text(f"""<!doctype html>

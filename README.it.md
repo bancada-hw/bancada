@@ -50,6 +50,8 @@ Alla fine ottieni un **rapporto PDF** pronto da consegnare al cliente o da archi
 Quasi tutto funziona senza diritti di amministratore. Con essi (o con `sudo` su Linux) vedi anche i moduli
 di RAM, il numero di serie e i dati SMART completi delle unità SATA.
 
+**Firma del codice:** l'eseguibile di Windows viene compilato su GitHub Actions e sarà firmato con il certificato di SignPath Foundation. Vedi la [politica di firma del codice](https://bancada-hw.github.io/bancada/it/firma/).
+
 ## Cosa verifica
 
 | | Test | Cosa fa |

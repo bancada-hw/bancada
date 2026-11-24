@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{guia_titulo}} · Bancada</title>
+<title>{{pagina_titulo}} · Bancada</title>
 <meta name="description" content="{{descripcion}}">
 <meta name="theme-color" content="#0B241C">
 <meta property="og:title" content="{{titulo}}">
 <meta property="og:description" content="{{descripcion}}">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://bancada-hw.github.io/bancada/{{lang}}/guia/">
+<meta property="og:url" content="https://bancada-hw.github.io/bancada/{{lang}}/{{pagina}}/">
 <meta property="og:image" content="https://bancada-hw.github.io/bancada/capturas/{{lang}}/inicio.png">
-<link rel="canonical" href="https://bancada-hw.github.io/bancada/{{lang}}/guia/">
-{{alternativas_guia}}
+<link rel="canonical" href="https://bancada-hw.github.io/bancada/{{lang}}/{{pagina}}/">
+{{alternativas_pagina}}
 <link rel="icon" href="../../assets/bancada.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../assets/web.css">
 </head>
@@ -32,7 +32,7 @@
       <a href="../#como">{{nav_como}}</a>
       <a href="../#ficha">{{nav_ficha}}</a>
       <a href="../#apoyar">{{nav_apoyar}}</a>
-      <a href="./" aria-current="page">{{nav_guia}}</a>
+      <a href="../guia/"{{actual_guia}}>{{nav_guia}}</a>
     </nav>
     <div class="cabecera-der">
       <label class="idioma"><span class="sr">Idioma</span>
@@ -52,7 +52,7 @@
     {{contenido}}
     <div class="guia-acciones">
       <a class="boton linea" href="../">← {{guia_volver}}</a>
-      <a class="boton linea" href="{{guia_github_url}}"><svg width="18" height="18"><use href="#ico-gh"/></svg>{{guia_github}}</a>
+      <a class="boton linea" href="{{pagina_github_url}}"><svg width="18" height="18"><use href="#ico-gh"/></svg>{{guia_github}}</a>
     </div>
   </article>
 </main>
@@ -60,14 +60,14 @@
 <footer class="pie">
   <div class="ancho pie-in">
     <div class="marca"><img src="../../assets/bancada.svg" alt="" width="28" height="28"><span>Bancada</span></div>
-    <p>{{pie_texto}} © 2026 Bill Bull · <a href="https://github.com/bancada-hw/bancada/blob/main/LICENSE">{{pie_licencia}}</a> · <a href="https://github.com/bancada-hw/bancada/blob/main/AVISO.md">{{pie_aviso}}</a><br>{{pie_cookies}}</p>
+    <p>{{pie_texto}} © 2026 Bill Bull · <a href="https://github.com/bancada-hw/bancada/blob/main/LICENSE">{{pie_licencia}}</a> · <a href="https://github.com/bancada-hw/bancada/blob/main/AVISO.md">{{pie_aviso}}</a> · <a href="../firma/">{{pie_firma}}</a><br>{{pie_cookies}}</p>
   </div>
 </footer>
 
 <script>
 (function () {
   var sel = document.getElementById('idioma');
-  sel.addEventListener('change', function () { location.href = '../../' + sel.value + '/guia/' + location.hash; });
+  sel.addEventListener('change', function () { location.href = '../../' + sel.value + '/{{pagina}}/' + location.hash; });
 })();
 </script>
 </body>

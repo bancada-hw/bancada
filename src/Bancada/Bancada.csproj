@@ -8,6 +8,8 @@
     <AssemblyName>Bancada</AssemblyName>
     <RootNamespace>Bancada</RootNamespace>
     <Version>0.2.0</Version>
+    <!-- La versión de producto del .exe es exactamente <Version>, sin el hash del commit: la firma de SignPath exige que coincida en cada compilación. -->
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
     <Product>Bancada</Product>
     <Authors>Bill Bull</Authors>
     <Company>Bill Bull</Company>

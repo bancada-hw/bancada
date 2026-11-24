@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Configuración de artefacto de SignPath para Bancada (slug «windows»).
+  Se pega en SignPath › proyecto bancada › Artifact configurations cuando aprueben el proyecto.
+  El artefacto que sube GitHub Actions es un ZIP con un solo archivo: Bancada-windows-x64.exe.
+  SignPath Foundation exige fijar el nombre y la versión de producto: si el .exe no dice «Bancada» y la
+  versión de esa compilación, SignPath se niega a firmarlo.
+-->
+<artifact-configuration xmlns="http://signpath.io/artifact-configuration/v1">
+  <parameters>
+    <parameter name="version" required="true" />
+  </parameters>
+  <zip-file>
+    <pe-file path="Bancada-windows-x64.exe" product-name="Bancada" product-version="${version}" file-version="${version}.0">
+      <authenticode-sign />
+    </pe-file>
+  </zip-file>
+</artifact-configuration>

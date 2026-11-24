@@ -50,6 +50,8 @@ da un **informe PDF** listo para entregar al cliente o archivar.
 Sin permisos de administrador funciona casi todo. Con ellos (o con `sudo` en Linux) se ven además los
 módulos de RAM, el número de serie y los datos SMART completos de los discos SATA.
 
+**Firma de código:** el ejecutable de Windows se compila en GitHub Actions y se firmará con el certificado de SignPath Foundation. Consulta la [política de firma de código](https://bancada-hw.github.io/bancada/es/firma/).
+
 ## Qué comprueba
 
 | | Prueba | Qué hace |

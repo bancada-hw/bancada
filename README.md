@@ -50,6 +50,8 @@ get a **PDF report** ready to hand to the customer or keep on file.
 Almost everything works without administrator rights. With them (or `sudo` on Linux) you also get the RAM
 modules, the serial number and full SMART data for SATA drives.
 
+**Code signing:** the Windows executable is built on GitHub Actions and will be signed with a SignPath Foundation certificate. See the [code signing policy](https://bancada-hw.github.io/bancada/en/firma/).
+
 ## What it tests
 
 | | Test | What it does |

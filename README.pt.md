@@ -50,6 +50,8 @@ pronto para entregar ao cliente ou arquivar.
 Quase tudo funciona sem permissões de administrador. Com elas (ou com `sudo` no Linux) você vê também os
 módulos de RAM, o número de série e os dados SMART completos dos discos SATA.
 
+**Assinatura de código:** o executável do Windows é compilado no GitHub Actions e será assinado com o certificado da SignPath Foundation. Veja a [política de assinatura de código](https://bancada-hw.github.io/bancada/pt/firma/).
+
 ## O que testa
 
 | | Teste | O que faz |

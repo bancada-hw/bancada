@@ -17,6 +17,8 @@ dotnet run --project src/Bancada          # in der Entwicklung starten
 
 Unter Windows erzeugt `publicar.ps1` beide eigenständigen ausführbaren Dateien (Windows und Linux) in `dist/`.
 
+Offizielle Versionen entstehen nicht so: Beim Hochladen eines Tags `vX.Y.Z` baut der Workflow [`.github/workflows/publicar.yml`](../../.github/workflows/publicar.yml) beide Dateien in GitHub Actions, signiert die Windows-Datei mit SignPath und legt einen Versionsentwurf an. Siehe die [Richtlinie zur Codesignierung](../firma/de.md).
+
 ## Unter Linux aus dem Quellcode installieren
 
 ```bash

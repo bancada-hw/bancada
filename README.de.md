@@ -50,6 +50,8 @@ Grafikkarte. Am Ende erhalten Sie einen **PDF-Bericht**, den Sie dem Kunden übe
 Fast alles funktioniert ohne Administratorrechte. Mit ihnen (oder `sudo` unter Linux) sehen Sie zusätzlich
 die RAM-Module, die Seriennummer und die vollständigen SMART-Daten von SATA-Laufwerken.
 
+**Codesignierung:** Die Windows-Datei wird in GitHub Actions gebaut und wird mit dem Zertifikat der SignPath Foundation signiert. Siehe die [Richtlinie zur Codesignierung](https://bancada-hw.github.io/bancada/de/firma/).
+
 ## Was es prüft
 
 | | Test | Was er macht |

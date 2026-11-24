@@ -17,6 +17,8 @@ dotnet run --project src/Bancada          # run in development
 
 On Windows, `publicar.ps1` builds both self-contained executables (Windows and Linux) into `dist/`.
 
+Official releases are not built that way: pushing a `vX.Y.Z` tag makes the [`.github/workflows/publicar.yml`](../../.github/workflows/publicar.yml) workflow build both executables on GitHub Actions, sign the Windows one with SignPath and create a draft release. See the [code signing policy](../firma/en.md).
+
 ## Installing on Linux from source
 
 ```bash

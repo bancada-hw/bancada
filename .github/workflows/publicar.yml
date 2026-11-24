@@ -1,0 +1,184 @@
+# Compila los ejecutables de Bancada en GitHub, firma el de Windows con SignPath y prepara la versión.
+#
+#   · Al subir una etiqueta vX.Y.Z (por ejemplo v0.3.0): compila, firma y crea un BORRADOR de versión
+#     en GitHub con los dos ejecutables. El borrador no se ve hasta que lo publicas tú.
+#   · A mano (Actions › Publicar › Run workflow): compila y deja los ejecutables como artefactos, sin versión.
+#
+# La firma solo se hace cuando SignPath Foundation haya aprobado el proyecto y estén puestos en el repositorio
+# (Settings › Secrets and variables › Actions):
+#   variable SIGNPATH_ORGANIZATION_ID   identificador de la organización en SignPath
+#   secreto  SIGNPATH_API_TOKEN         token de un usuario de SignPath con permiso para enviar firmas
+# Mientras no estén, todo funciona igual pero el .exe sale sin firmar.
+# Cada firma hay que aprobarla a mano en SignPath (lo exige su política, ver docs/firma/).
+
+name: Publicar
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  PUBLICAR: >-
+    -c Release --self-contained true -v q
+    -p:PublishSingleFile=true
+    -p:IncludeNativeLibrariesForSelfExtract=true
+    -p:EnableCompressionInSingleFile=true
+    -p:DebugType=none
+
+jobs:
+  version:
+    name: Comprobar versión
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.v.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: v
+        name: Leer la versión del proyecto
+        shell: bash
+        run: |
+          version=$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' src/Bancada/Bancada.csproj | head -1)
+          echo "Versión en Bancada.csproj: $version"
+          if [[ "$GITHUB_REF_TYPE" == "tag" && "$GITHUB_REF_NAME" != "v$version" ]]; then
+            echo "::error::La etiqueta $GITHUB_REF_NAME no coincide con la versión $version de Bancada.csproj"
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+  windows:
+    name: Windows x64
+    needs: version
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Compilar
+        shell: pwsh
+        run: |
+          dotnet publish src/Bancada/Bancada.csproj -r win-x64 -o artifacts/win-x64 $env:PUBLICAR.Split(' ', [StringSplitOptions]::RemoveEmptyEntries)
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+          New-Item -ItemType Directory -Force sin-firmar | Out-Null
+          Copy-Item artifacts/win-x64/Bancada.exe sin-firmar/Bancada-windows-x64.exe
+
+      - name: Guardar el .exe sin firmar
+        id: sin-firmar
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-sin-firmar
+          path: sin-firmar/Bancada-windows-x64.exe
+          if-no-files-found: error
+
+      - name: Firmar con SignPath (espera tu aprobación)
+        if: ${{ vars.SIGNPATH_ORGANIZATION_ID != '' }}
+        uses: signpath/github-action-submit-signing-request@v3
+        with:
+          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+          organization-id: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
+          project-slug: bancada
+          signing-policy-slug: release-signing
+          artifact-configuration-slug: windows
+          github-artifact-id: ${{ steps.sin-firmar.outputs.artifact-id }}
+          wait-for-completion: true
+          wait-for-completion-timeout-in-seconds: 86400
+          output-artifact-directory: firmado
+          parameters: |
+            version: ${{ toJSON(needs.version.outputs.version) }}
+
+      - name: Comprobar la firma
+        if: ${{ vars.SIGNPATH_ORGANIZATION_ID != '' }}
+        shell: pwsh
+        run: |
+          $firma = Get-AuthenticodeSignature firmado/Bancada-windows-x64.exe
+          "Estado: $($firma.Status) · Firmante: $($firma.SignerCertificate.Subject)"
+          if ($firma.Status -ne 'Valid') { throw 'El ejecutable firmado no tiene una firma válida' }
+
+      - name: Elegir el .exe final
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force final | Out-Null
+          $origen = if (Test-Path firmado/Bancada-windows-x64.exe) { 'firmado' } else { 'sin-firmar' }
+          Copy-Item "$origen/Bancada-windows-x64.exe" final/
+          "Ejecutable de Windows: $origen"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Bancada-windows-x64
+          path: final/Bancada-windows-x64.exe
+          if-no-files-found: error
+
+  linux:
+    name: Linux x64
+    needs: version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Compilar
+        shell: bash
+        run: |
+          dotnet publish src/Bancada/Bancada.csproj -r linux-x64 -o artifacts/linux-x64 $PUBLICAR
+          mkdir -p final
+          cp artifacts/linux-x64/Bancada final/Bancada-linux-x64
+          chmod +x final/Bancada-linux-x64
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Bancada-linux-x64
+          path: final/Bancada-linux-x64
+          if-no-files-found: error
+
+  borrador:
+    name: Borrador de versión
+    if: ${{ github.ref_type == 'tag' }}
+    needs: [version, windows, linux]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: Bancada-*
+          merge-multiple: true
+          path: dist
+
+      - name: Crear el borrador
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.version.outputs.version }}
+          FIRMADO: ${{ vars.SIGNPATH_ORGANIZATION_ID != '' }}
+        run: |
+          cd dist
+          chmod +x Bancada-linux-x64
+          sha256sum Bancada-windows-x64.exe Bancada-linux-x64 > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+          {
+            echo "Bancada $VERSION"
+            echo
+            echo "- **Windows 10/11 x64:** \`Bancada-windows-x64.exe\`"
+            echo "- **Linux x64:** \`Bancada-linux-x64\` (\`chmod +x Bancada-linux-x64\`)"
+            echo
+            echo "Compilado en GitHub Actions desde el código de esta etiqueta. Sumas SHA-256 en \`SHA256SUMS.txt\`."
+            if [[ "$FIRMADO" == "true" ]]; then
+              echo
+              echo "Free code signing provided by [SignPath.io](https://about.signpath.io), certificate by [SignPath Foundation](https://signpath.org)."
+            fi
+            echo
+            echo "[Code signing policy](https://bancada-hw.github.io/bancada/en/firma/) · [Política de firma de código](https://bancada-hw.github.io/bancada/es/firma/)"
+          } > notas.md
+          gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --draft \
+            --title "Bancada $VERSION" --notes-file notas.md \
+            Bancada-windows-x64.exe Bancada-linux-x64 SHA256SUMS.txt

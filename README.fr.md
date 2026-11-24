@@ -50,6 +50,8 @@ contrôler, vous voyez ce qu'il contient et vous vérifiez chaque pièce, du cla
 Presque tout fonctionne sans droits d'administrateur. Avec eux (ou `sudo` sous Linux), vous voyez aussi les
 barrettes de RAM, le numéro de série et les données SMART complètes des disques SATA.
 
+**Signature de code :** l'exécutable Windows est compilé sur GitHub Actions et sera signé avec le certificat de SignPath Foundation. Consultez la [politique de signature de code](https://bancada-hw.github.io/bancada/fr/firma/).
+
 ## Ce qu'il teste
 
 | | Test | Ce qu'il fait |
